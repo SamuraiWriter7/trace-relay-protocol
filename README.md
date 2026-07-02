@@ -154,6 +154,88 @@ Trace Handoff should preserve continuity without erasing authorship.
 
 It should allow traces to move across systems while keeping lineage, boundary conditions, and human review explicit.
 
+## v0.3 Scope — Multi-Wing Trace Route
+
+Version 0.3 introduces the **Multi-Wing Trace Route**.
+
+While v0.1 defines how a conceptual trace is recorded, and v0.2 defines how a trace is handed off into another context, v0.3 defines how a trace can move across multiple specialized AI wings.
+
+## What is a Multi-Wing Trace Route?
+
+A Multi-Wing Trace Route is a route definition for passing a conceptual trace across specialized wings such as:
+
+- Finder Wing
+- Analyst Wing
+- Memory Wing
+- Audit Wing
+- Mythos Regulator Wing
+- Human Gate
+
+Each wing receives a trace payload, performs only its allowed operations, preserves required trace elements, and passes the result forward under explicit continuity and audit rules.
+
+## Trace Relay vs Trace Handoff vs Multi-Wing Trace Route
+
+| Layer | Purpose |
+|---|---|
+| Trace Relay | Preserves and develops a conceptual trace across time |
+| Trace Handoff | Transfers a trace into another context, wing, layer, or derivative structure |
+| Multi-Wing Trace Route | Defines how traces move through multiple specialized wings |
+
+Trace Relay is memory circulation.
+
+Trace Handoff is memory transfer.
+
+Multi-Wing Trace Route is memory orchestration.
+
+## v0.3 Record Structure
+
+A Multi-Wing Trace Route contains:
+
+- `source_handoff`
+- `route_purpose`
+- `wings`
+- `route_sequence`
+- `continuity_rules`
+- `blocking_conditions`
+- `human_gate`
+- `audit`
+
+## Route Flow
+
+```text
+Source Handoff
+  ↓
+Finder Wing
+  ↓
+Analyst Wing
+  ↓
+Memory Wing
+  ↓
+Audit Wing
+  ↓
+Mythos Regulator Wing
+  ↓
+Human Gate
+
+Design Principle
+
+Multi-Wing Trace Route allows conceptual traces to be transformed without losing lineage.
+
+Each wing may process a trace, but no wing may erase:
+
+source trace references
+authorship boundaries
+continuity rules
+human review requirements
+symbolic / factual distinction
+Human Gate
+
+The Human Gate is the final review point for derivative creation, publication, or conceptual ownership claims.
+
+This keeps Trace Relay Protocol from becoming an autonomous authorship machine.
+
+It remains a memory and coordination protocol under human review.
+
 Validation
 
 Install dependencies:
