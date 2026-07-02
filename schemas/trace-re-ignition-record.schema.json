@@ -1,0 +1,311 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/trace-re-ignition-record.schema.json",
+  "title": "Trace Re-Ignition Record",
+  "description": "A record for reactivating an audited conceptual trace into a new question, derivative route, protocol extension, audit bridge, or value-return layer.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "re_ignition_id",
+    "title",
+    "created_at",
+    "status",
+    "source_trace",
+    "trigger_context",
+    "re_ignition_conditions",
+    "activation_plan",
+    "context_compatibility",
+    "boundary_controls",
+    "re_ignition_output",
+    "audit"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.6.0"
+    },
+    "re_ignition_id": {
+      "type": "string",
+      "pattern": "^ri-[A-Za-z0-9._-]+$",
+      "description": "Unique identifier for the trace re-ignition record."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "active", "approved", "blocked", "archived"]
+    },
+    "source_trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trace_id",
+        "title",
+        "summary",
+        "source_handoff_id",
+        "source_route_id",
+        "source_rule_id",
+        "source_mutation_log_id"
+      ],
+      "properties": {
+        "trace_id": {
+          "type": "string",
+          "pattern": "^trace-[A-Za-z0-9._-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_handoff_id": {
+          "type": "string",
+          "pattern": "^th-[A-Za-z0-9._-]+$"
+        },
+        "source_route_id": {
+          "type": "string",
+          "pattern": "^mwtr-[A-Za-z0-9._-]+$"
+        },
+        "source_rule_id": {
+          "type": "string",
+          "pattern": "^ttr-[A-Za-z0-9._-]+$"
+        },
+        "source_mutation_log_id": {
+          "type": "string",
+          "pattern": "^tdm-[A-Za-z0-9._-]+$"
+        }
+      }
+    },
+    "trigger_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trigger_type",
+        "trigger_summary",
+        "triggering_input",
+        "detected_by"
+      ],
+      "properties": {
+        "trigger_type": {
+          "type": "string",
+          "enum": [
+            "new_question",
+            "context_match",
+            "periodic_review",
+            "derivative_request",
+            "audit_signal",
+            "human_selection",
+            "external_event"
+          ]
+        },
+        "trigger_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "triggering_input": {
+          "type": "string",
+          "minLength": 1
+        },
+        "detected_by": {
+          "type": "string",
+          "enum": ["human", "ai", "human_ai_collaboration", "system"]
+        }
+      }
+    },
+    "re_ignition_conditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_conditions",
+        "optional_conditions",
+        "blocking_conditions"
+      ],
+      "properties": {
+        "required_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "optional_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "blocking_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "activation_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "activation_mode",
+        "re_ignited_question",
+        "intended_output",
+        "next_routes"
+      ],
+      "properties": {
+        "activation_mode": {
+          "type": "string",
+          "enum": [
+            "dialogue_continuation",
+            "derivative_expansion",
+            "protocol_extension",
+            "audit_recheck",
+            "royalty_bridge",
+            "memory_review"
+          ]
+        },
+        "re_ignited_question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intended_output": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next_routes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "context_compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "compatible",
+        "compatibility_notes",
+        "mismatch_risks"
+      ],
+      "properties": {
+        "compatible": {
+          "type": "boolean"
+        },
+        "compatibility_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "mismatch_risks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "boundary_controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "must_preserve",
+        "must_not_claim",
+        "review_required"
+      ],
+      "properties": {
+        "must_preserve": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "must_not_claim": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "re_ignition_output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "new_trace_id",
+        "output_status",
+        "summary",
+        "handoff_recommendation"
+      ],
+      "properties": {
+        "new_trace_id": {
+          "type": "string",
+          "pattern": "^trace-[A-Za-z0-9._-]+$"
+        },
+        "output_status": {
+          "type": "string",
+          "enum": ["proposed", "active", "blocked", "approved"]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "handoff_recommendation": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audit_required",
+        "human_review_required",
+        "audit_result",
+        "boundary_notes"
+      ],
+      "properties": {
+        "audit_required": {
+          "type": "boolean"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "audit_result": {
+          "type": "string",
+          "enum": ["pass", "pass_with_notes", "fail", "pending"]
+        },
+        "boundary_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
