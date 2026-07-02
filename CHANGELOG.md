@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.0-candidate] - 2026-07-02
+
+### Added
+
+- Added `Structural Audit Bridge` schema.
+- Added example YAML record for structural causality and value-claim audit.
+- Updated validation script to validate:
+  - Trace Relay Record
+  - Trace Handoff Record
+  - Multi-Wing Trace Route
+  - Trace Transformation Rule
+  - Trace Diff Mutation Log
+  - Trace Re-Ignition Record
+  - Trace Royalty Bridge
+  - Structural Audit Bridge
+
+### Defined
+
+- Structural Audit Bridge as the causality-verification layer of the protocol.
+- `source_royalty_bridge` as the value-return bridge being audited.
+- `audit_subject` as the derivative, attribution, royalty, lineage, or authorship claim under review.
+- `structural_causality` as the causal-link assessment between traces, derivatives, mutation logs, re-ignition, and bridge records.
+- `evidence_map` as the supporting and missing evidence layer.
+- `similarity_assessment` as the similarity and independent-convergence review.
+- `dependency_assessment` as the structural dependency review.
+- `attribution_review` as the attribution requirement and risk layer.
+- `value_claim_review` as the allowed and blocked value-claim layer.
+- `audit_decision` as the approval, revision, rejection, or pending decision layer.
+- `handoff` as the next recommended review or approval route.
+- `audit` as the final boundary layer.
+
+### Core Distinction
+
+```text
+Trace Relay = memory circulation
+Trace Handoff = memory transfer
+Multi-Wing Trace Route = memory orchestration
+Trace Transformation Rules = memory mutation control
+Trace Diff / Mutation Log = memory change audit
+Re-Ignition Layer = memory reactivation
+Royalty OS Bridge = memory value-return preparation
+Structural Audit Bridge = memory causality verification
+Notes
+
+This release strengthens the protocol’s audit layer.
+
+v0.7 prepared attribution and value-return claims.
+
+v0.8 verifies whether those claims are supported by trace lineage, structural causality, evidence, and human review.
+
+It prevents value-return logic from becoming automatic, unsupported, or detached from origin evidence.
+
 ## [0.7.0-candidate] - 2026-07-02
 
 ### Added
