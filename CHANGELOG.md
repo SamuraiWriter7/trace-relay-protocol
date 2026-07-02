@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.0-candidate] - 2026-07-02
+
+### Added
+
+- Added `Trace Royalty Bridge` schema.
+- Added example YAML record for royalty and value-return preparation.
+- Updated validation script to validate:
+  - Trace Relay Record
+  - Trace Handoff Record
+  - Multi-Wing Trace Route
+  - Trace Transformation Rule
+  - Trace Diff Mutation Log
+  - Trace Re-Ignition Record
+  - Trace Royalty Bridge
+
+### Defined
+
+- Royalty OS Bridge as the value-return preparation layer of the protocol.
+- `source_re_ignition` as the re-ignited trace source.
+- `derivative_context` as the derivative structure connected to the trace lineage.
+- `lineage_basis` as the trace, route, rule, mutation, and re-ignition references.
+- `contribution_assessment` as the human, AI, wing, system, or external-source contribution record.
+- `value_return_scope` as the attribution, royalty, revenue-share, credit, donation, or compute-credit scope.
+- `allocation_rules` as the proposed value-return allocation logic.
+- `eligibility_conditions` as required and blocking conditions for value-return claims.
+- `royalty_receipt_output` as the proposed output record for downstream value-return systems.
+- `audit` as the final boundary and review layer.
+
+### Core Distinction
+
+```text
+Trace Relay = memory circulation
+Trace Handoff = memory transfer
+Multi-Wing Trace Route = memory orchestration
+Trace Transformation Rules = memory mutation control
+Trace Diff / Mutation Log = memory change audit
+Re-Ignition Layer = memory reactivation
+Royalty OS Bridge = memory value-return preparation
+
 ## [0.6.0-candidate] - 2026-07-02
 
 ### Added
