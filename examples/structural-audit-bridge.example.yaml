@@ -1,0 +1,152 @@
+schema_version: "0.8.0"
+audit_bridge_id: "sab-001"
+title: "Structural Audit for Trace Relay Royalty Bridge"
+created_at: "2026-07-02T00:00:00Z"
+status: "active"
+
+source_royalty_bridge:
+  royalty_bridge_id: "trb-001"
+  receipt_id: "rr-001"
+  source_trace_id: "trace-004"
+  derivative_id: "deriv-001"
+  summary: "A proposed attribution-first royalty bridge connecting Trace Relay lineage to future value-return records."
+
+audit_subject:
+  subject_type: "value_return_claim"
+  subject_title: "Trace Relay Protocol as Civilization OS Dialogue Layer"
+  claim_being_audited: "The derivative protocol extension is eligible for attribution-first value-return preparation based on trace lineage."
+  claim_type: "royalty_eligibility"
+
+structural_causality:
+  causality_level: "strong"
+  causal_links:
+    - link_id: "causal-001"
+      from_ref: "trace-004"
+      to_ref: "deriv-001"
+      relationship_type: "trace_to_derivative"
+      description: "The derivative protocol extension directly extends the Trace Relay memory layer into value-return preparation."
+      confidence: "high"
+    - link_id: "causal-002"
+      from_ref: "tdm-001"
+      to_ref: "trb-001"
+      relationship_type: "mutation_to_output"
+      description: "The royalty bridge depends on the mutation log proving that lineage and authorship boundaries were preserved."
+      confidence: "high"
+    - link_id: "causal-003"
+      from_ref: "ri-001"
+      to_ref: "trb-001"
+      relationship_type: "re_ignition_to_bridge"
+      description: "The royalty bridge was created after the audited trace was re-ignited toward value-return logic."
+      confidence: "high"
+  missing_links:
+    - "No monetary transaction evidence is attached yet."
+    - "No external licensing agreement is attached yet."
+  causality_notes:
+    - "Structural causality is strong for attribution preparation."
+    - "Structural causality is not yet sufficient for automatic monetary royalty."
+
+evidence_map:
+  evidence_items:
+    - evidence_id: "evidence-001"
+      evidence_type: "trace_record"
+      reference: "trace-004"
+      supports_claim: true
+      strength: "strong"
+    - evidence_id: "evidence-002"
+      evidence_type: "mutation_log"
+      reference: "tdm-001"
+      supports_claim: true
+      strength: "strong"
+    - evidence_id: "evidence-003"
+      evidence_type: "re_ignition_record"
+      reference: "ri-001"
+      supports_claim: true
+      strength: "strong"
+    - evidence_id: "evidence-004"
+      evidence_type: "royalty_bridge_record"
+      reference: "trb-001"
+      supports_claim: true
+      strength: "moderate"
+  evidence_gaps:
+    - "Derivative publication evidence is not attached."
+    - "Revenue or licensing evidence is not attached."
+    - "Human approval for monetary allocation is not attached."
+
+similarity_assessment:
+  similarity_level: "high"
+  similarity_basis:
+    - "schema_structure"
+    - "workflow"
+    - "conceptual_framing"
+    - "lineage_pattern"
+  independent_convergence_possible: true
+  notes:
+    - "The derivative strongly follows the Trace Relay protocol lineage."
+    - "Independent convergence is possible at the abstract workflow level, but the specific terminology and lineage chain are trace-dependent."
+
+dependency_assessment:
+  dependency_level: "strong"
+  dependent_elements:
+    - "Record -> Handoff -> Route -> Transform -> Diff -> Re-Ignition -> Royalty Bridge flow"
+    - "Attribution-first value-return preparation"
+    - "Lineage-aware royalty eligibility"
+  independent_elements:
+    - "General idea of attribution"
+    - "General idea of audit"
+    - "General idea of value return"
+  dependency_notes:
+    - "The derivative depends strongly on the protocol-specific trace lineage."
+    - "The derivative does not yet justify automatic monetary royalty."
+
+attribution_review:
+  attribution_required: true
+  recommended_attribution: "Attribute the conceptual origin to the human-originated Trace Relay concept with AI-assisted structuring."
+  attribution_risk: "medium"
+  review_notes:
+    - "Attribution should distinguish human origin from AI-assisted structuring."
+    - "AI assistance should be credited as structuring support, not autonomous authorship."
+
+value_claim_review:
+  value_claim_allowed: true
+  allowed_claim_types:
+    - "attribution"
+    - "credit"
+    - "citation"
+    - "manual_royalty_review"
+  blocked_claim_types:
+    - "automatic_royalty"
+    - "automatic_revenue_share"
+    - "exclusive_ownership"
+    - "ai_autonomous_authorship_claim"
+  review_notes:
+    - "Attribution-first value return is allowed."
+    - "Monetary royalty requires additional derivative evidence and human approval."
+
+audit_decision:
+  decision: "approve_with_notes"
+  decision_summary: "The structural audit supports attribution-first value-return preparation, but blocks automatic royalty or revenue-share claims until derivative evidence and human approval are attached."
+  required_revisions:
+    - "Attach derivative publication or repository evidence before monetary royalty review."
+    - "Add human approval record before allocation logic is activated."
+    - "Clarify whether the derivative is public, private, commercial, or experimental."
+  approved_next_routes:
+    - "human_gate_approval_receipt"
+    - "derivative_output_record"
+    - "manual_royalty_review"
+
+handoff:
+  next_handoff_recommended: true
+  handoff_target: "Human Gate Approval Receipt"
+  handoff_conditions:
+    - "Human reviewer must approve attribution wording."
+    - "Monetary allocation must remain disabled until derivative evidence is attached."
+    - "Audit notes must remain visible in the next record."
+
+audit:
+  audit_required: true
+  human_review_required: true
+  audit_result: "pass_with_notes"
+  boundary_notes:
+    - "Structural Audit Bridge verifies causality and evidence; it does not itself grant legal ownership."
+    - "Attribution preparation is approved, but monetary royalty remains blocked."
+    - "Human review remains required before public or commercial value-return claims."
