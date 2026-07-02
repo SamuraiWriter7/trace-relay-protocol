@@ -622,6 +622,95 @@ Royalty Receipt Output
   ↓
 Audit / Human Review
 
+## v0.8 Scope — Structural Audit Bridge
+
+Version 0.8 introduces the **Structural Audit Bridge**.
+
+While v0.7 connects re-ignited traces to attribution and value-return preparation, v0.8 verifies whether derivative, attribution, royalty, or value-return claims are actually supported by structural causality, trace lineage, evidence, and human review.
+
+## What is Structural Audit Bridge?
+
+Structural Audit Bridge is the process of checking whether a claim is structurally justified.
+
+It asks:
+
+- What claim is being audited?
+- Which trace or derivative does it depend on?
+- What evidence supports the claim?
+- What causal links exist?
+- What links are missing?
+- Is the similarity strong enough to require attribution?
+- Is dependency strong enough to justify value-return review?
+- Which claims are allowed?
+- Which claims must remain blocked?
+- What must be revised before the next handoff?
+
+## Core Distinction
+
+| Layer | Purpose |
+|---|---|
+| Trace Relay | Preserves and develops a conceptual trace across time |
+| Trace Handoff | Transfers a trace into another context, wing, layer, or derivative structure |
+| Multi-Wing Trace Route | Defines how traces move through multiple specialized wings |
+| Trace Transformation Rules | Defines how traces may be changed without breaking lineage |
+| Trace Diff / Mutation Log | Records what changed during transformation |
+| Re-Ignition Layer | Reactivates audited traces into new questions or routes |
+| Royalty OS Bridge | Connects trace lineage to attribution and value-return preparation |
+| Structural Audit Bridge | Verifies causality, evidence, dependency, and claim legitimacy |
+
+Trace Relay is memory circulation.
+
+Trace Handoff is memory transfer.
+
+Multi-Wing Trace Route is memory orchestration.
+
+Trace Transformation Rules are memory mutation control.
+
+Trace Diff / Mutation Log is memory change audit.
+
+Re-Ignition Layer is memory reactivation.
+
+Royalty OS Bridge is memory value-return preparation.
+
+Structural Audit Bridge is memory causality verification.
+
+## v0.8 Record Structure
+
+A Structural Audit Bridge contains:
+
+- `source_royalty_bridge`
+- `audit_subject`
+- `structural_causality`
+- `evidence_map`
+- `similarity_assessment`
+- `dependency_assessment`
+- `attribution_review`
+- `value_claim_review`
+- `audit_decision`
+- `handoff`
+- `audit`
+
+## Structural Audit Flow
+
+```text
+Royalty Bridge
+  ↓
+Audit Subject
+  ↓
+Structural Causality
+  ↓
+Evidence Map
+  ↓
+Similarity / Dependency Assessment
+  ↓
+Attribution Review
+  ↓
+Value Claim Review
+  ↓
+Audit Decision
+  ↓
+Next Handoff
+
 ## Validation
 
 Install dependencies:
