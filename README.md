@@ -711,6 +711,95 @@ Audit Decision
   ↓
 Next Handoff
 
+## v0.9 Scope — Human Gate Approval Receipt
+
+Version 0.9 introduces the **Human Gate Approval Receipt**.
+
+While v0.8 verifies whether derivative, attribution, royalty, or value-return claims are supported by structural causality and evidence, v0.9 records the human decision that follows that audit.
+
+## What is Human Gate Approval Receipt?
+
+Human Gate Approval Receipt records:
+
+- what structural audit was reviewed
+- what subject was being approved
+- who reviewed it
+- what decision was made
+- what scope was approved
+- what scope was rejected
+- what conditions must be satisfied
+- what risks were acknowledged
+- what next handoff is allowed
+- what remains blocked
+
+It is the human decision layer of the Trace Relay Protocol.
+
+## Core Distinction
+
+| Layer | Purpose |
+|---|---|
+| Trace Relay | Preserves and develops a conceptual trace across time |
+| Trace Handoff | Transfers a trace into another context, wing, layer, or derivative structure |
+| Multi-Wing Trace Route | Defines how traces move through multiple specialized wings |
+| Trace Transformation Rules | Defines how traces may be changed without breaking lineage |
+| Trace Diff / Mutation Log | Records what changed during transformation |
+| Re-Ignition Layer | Reactivates audited traces into new questions or routes |
+| Royalty OS Bridge | Connects trace lineage to attribution and value-return preparation |
+| Structural Audit Bridge | Verifies causality, evidence, dependency, and claim legitimacy |
+| Human Gate Approval Receipt | Records the human decision after structural audit |
+
+Trace Relay is memory circulation.
+
+Trace Handoff is memory transfer.
+
+Multi-Wing Trace Route is memory orchestration.
+
+Trace Transformation Rules are memory mutation control.
+
+Trace Diff / Mutation Log is memory change audit.
+
+Re-Ignition Layer is memory reactivation.
+
+Royalty OS Bridge is memory value-return preparation.
+
+Structural Audit Bridge is memory causality verification.
+
+Human Gate Approval Receipt is memory governance approval.
+
+## v0.9 Record Structure
+
+A Human Gate Approval Receipt contains:
+
+- `source_structural_audit`
+- `approval_subject`
+- `reviewer`
+- `decision`
+- `approved_scope`
+- `rejected_scope`
+- `conditions`
+- `risk_acknowledgement`
+- `next_handoff`
+- `audit`
+
+## Human Gate Flow
+
+```text
+Structural Audit
+  ↓
+Approval Subject
+  ↓
+Human Reviewer
+  ↓
+Decision
+  ↓
+Approved / Rejected Scope
+  ↓
+Conditions
+  ↓
+Risk Acknowledgement
+  ↓
+Next Handoff
+
 ## Validation
 
 Install dependencies:
