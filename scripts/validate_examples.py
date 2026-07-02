@@ -48,6 +48,11 @@ VALIDATION_TARGETS = [
         "schema": ROOT / "schemas" / "structural-audit-bridge.schema.json",
         "example": ROOT / "examples" / "structural-audit-bridge.example.yaml",
     },
+    {
+        "name": "Human Gate Approval Receipt",
+        "schema": ROOT / "schemas" / "human-gate-approval-receipt.schema.json",
+        "example": ROOT / "examples" / "human-gate-approval-receipt.example.yaml",
+    },
 ]
 
 
