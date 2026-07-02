@@ -2,6 +2,70 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-candidate] - 2026-07-02
+
+### Added
+
+- Added `Unified Trace Relay Lifecycle` schema.
+- Added example YAML record for the complete Trace Relay lifecycle.
+- Updated validation script to validate:
+  - Trace Relay Record
+  - Trace Handoff Record
+  - Multi-Wing Trace Route
+  - Trace Transformation Rule
+  - Trace Diff Mutation Log
+  - Trace Re-Ignition Record
+  - Trace Royalty Bridge
+  - Structural Audit Bridge
+  - Human Gate Approval Receipt
+  - Unified Trace Relay Lifecycle
+
+### Defined
+
+- Unified Trace Relay Lifecycle as the lifecycle-continuity layer of the protocol.
+- `origin_summary` as the origin context of the lifecycle.
+- `layer_refs` as the references to all lifecycle layer records.
+- `phase_sequence` as the ordered progression across record, handoff, route, transform, diff, re-ignition, royalty bridge, structural audit, and human gate.
+- `current_state` as the current lifecycle phase, status, open conditions, and blocked claims.
+- `completion_criteria` as the requirements for lifecycle completion.
+- `continuity_controls` as the preservation, non-claim, and carry-forward requirements.
+- `next_cycle` as the next allowed cycle or derivative route.
+- `governance` as the human authority and AI support boundary.
+- `audit` as the lifecycle validity and final boundary layer.
+
+### Core Distinction
+
+```text
+Trace Relay = memory circulation
+Trace Handoff = memory transfer
+Multi-Wing Trace Route = memory orchestration
+Trace Transformation Rules = memory mutation control
+Trace Diff / Mutation Log = memory change audit
+Re-Ignition Layer = memory reactivation
+Royalty OS Bridge = memory value-return preparation
+Structural Audit Bridge = memory causality verification
+Human Gate Approval Receipt = memory governance approval
+Unified Trace Relay Lifecycle = memory lifecycle continuity
+```
+
+### Notes
+
+This release completes the first full Trace Relay Protocol lifecycle.
+
+v0.1–v0.9 defined the individual layers.
+
+v1.0 connects those layers into a unified lifecycle that can track a trace from dialogue origin to human-approved continuation.
+
+The first lifecycle arc is now:
+
+```text
+Record -> Handoff -> Route -> Transform -> Diff -> Re-Ignition -> Royalty Bridge -> Structural Audit -> Human Gate -> Next Cycle
+```
+
+This establishes Trace Relay Protocol as a complete dialogue-memory lifecycle protocol.
+
+---
+
 ## [0.9.0-candidate] - 2026-07-02
 
 ### Added
@@ -45,7 +109,9 @@ Re-Ignition Layer = memory reactivation
 Royalty OS Bridge = memory value-return preparation
 Structural Audit Bridge = memory causality verification
 Human Gate Approval Receipt = memory governance approval
-Notes
+```
+
+### Notes
 
 This release adds the human governance layer.
 
@@ -54,6 +120,8 @@ v0.8 verifies structural causality and evidence.
 v0.9 records the human decision that follows that verification.
 
 It prevents structural audit from being mistaken for final approval and ensures that conditional approval, rejected claims, and next-handoff conditions remain explicit.
+
+---
 
 ## [0.8.0-candidate] - 2026-07-02
 
@@ -97,7 +165,9 @@ Trace Diff / Mutation Log = memory change audit
 Re-Ignition Layer = memory reactivation
 Royalty OS Bridge = memory value-return preparation
 Structural Audit Bridge = memory causality verification
-Notes
+```
+
+### Notes
 
 This release strengthens the protocol’s audit layer.
 
@@ -106,6 +176,8 @@ v0.7 prepared attribution and value-return claims.
 v0.8 verifies whether those claims are supported by trace lineage, structural causality, evidence, and human review.
 
 It prevents value-return logic from becoming automatic, unsupported, or detached from origin evidence.
+
+---
 
 ## [0.7.0-candidate] - 2026-07-02
 
@@ -145,6 +217,17 @@ Trace Transformation Rules = memory mutation control
 Trace Diff / Mutation Log = memory change audit
 Re-Ignition Layer = memory reactivation
 Royalty OS Bridge = memory value-return preparation
+```
+
+### Notes
+
+This release connects Trace Relay Protocol to attribution and value-return structures.
+
+It does not define automatic monetary royalty.
+
+Instead, it prepares lineage-aware attribution, contribution assessment, and royalty eligibility conditions while preserving human review, derivative evidence, and structural audit requirements.
+
+---
 
 ## [0.6.0-candidate] - 2026-07-02
 
@@ -181,17 +264,23 @@ Multi-Wing Trace Route = memory orchestration
 Trace Transformation Rules = memory mutation control
 Trace Diff / Mutation Log = memory change audit
 Re-Ignition Layer = memory reactivation
-Notes
+```
+
+### Notes
 
 This release begins the second arc of the Trace Relay Protocol.
 
 v0.1–v0.5 established:
 
+```text
 Record -> Handoff -> Route -> Transform -> Diff
+```
 
 v0.6 adds the ability to reactivate an audited trace into a new question, protocol extension, derivative route, audit bridge, or value-return layer.
 
 This prevents traces from becoming dormant archives while also preventing contextless reuse.
+
+---
 
 ## [0.5.0-candidate] - 2026-07-02
 
