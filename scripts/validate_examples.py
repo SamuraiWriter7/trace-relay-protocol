@@ -1,0 +1,59 @@
+import json
+from pathlib import Path
+
+import yaml
+from jsonschema import Draft202012Validator, FormatChecker
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+VALIDATION_TARGETS = [
+    {
+        "name": "Trace Relay Record",
+        "schema": ROOT / "schemas" / "trace-relay-record.schema.json",
+        "example": ROOT / "examples" / "trace-relay-record.example.yaml",
+    }
+]
+
+
+def load_json(path: Path):
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_yaml(path: Path):
+    with path.open("r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def validate_target(target):
+    schema_path = target["schema"]
+    example_path = target["example"]
+
+    print(f"[validate] {target['name']}")
+    print(f"  schema : {schema_path.relative_to(ROOT)}")
+    print(f"  example: {example_path.relative_to(ROOT)}")
+
+    schema = load_json(schema_path)
+    instance = load_yaml(example_path)
+
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    errors = sorted(validator.iter_errors(instance), key=lambda e: e.path)
+
+    if errors:
+        for error in errors:
+            path = ".".join(str(p) for p in error.path)
+            location = path if path else "<root>"
+            print(f"[error] {location}: {error.message}")
+        raise SystemExit(1)
+
+    print(f"[ok] {example_path.name} is valid")
+
+
+def main():
+    for target in VALIDATION_TARGETS:
+        validate_target(target)
+
+
+if __name__ == "__main__":
+    main()
