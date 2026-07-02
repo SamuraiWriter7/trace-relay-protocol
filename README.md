@@ -236,6 +236,73 @@ This keeps Trace Relay Protocol from becoming an autonomous authorship machine.
 
 It remains a memory and coordination protocol under human review.
 
+## v0.4 Scope — Trace Transformation Rules
+
+Version 0.4 introduces **Trace Transformation Rules**.
+
+While v0.1 records traces, v0.2 hands them off, and v0.3 routes them across multiple wings, v0.4 defines how traces may be transformed without losing lineage, authorship boundaries, semantic integrity, or human review.
+
+## What are Trace Transformation Rules?
+
+Trace Transformation Rules define:
+
+- What transformations are allowed
+- What transformations are prohibited
+- Which trace elements must be preserved
+- How much semantic drift is acceptable
+- When a diff summary is required
+- When human review is required
+- When mythic or symbolic language must be regulated
+
+## Core Distinction
+
+| Layer | Purpose |
+|---|---|
+| Trace Relay | Preserves and develops a conceptual trace across time |
+| Trace Handoff | Transfers a trace into another context, wing, layer, or derivative structure |
+| Multi-Wing Trace Route | Defines how traces move through multiple specialized wings |
+| Trace Transformation Rules | Defines how traces may be changed without breaking lineage |
+
+Trace Relay is memory circulation.
+
+Trace Handoff is memory transfer.
+
+Multi-Wing Trace Route is memory orchestration.
+
+Trace Transformation Rules are memory mutation control.
+
+## v0.4 Record Structure
+
+A Trace Transformation Rule contains:
+
+- `applies_to`
+- `source_route`
+- `transformation_scope`
+- `allowed_transformations`
+- `prohibited_transformations`
+- `preservation_requirements`
+- `mutation_controls`
+- `risk_assessment`
+- `output_requirements`
+- `audit`
+
+## Transformation Flow
+
+```text
+Source Trace
+  ↓
+Route Context
+  ↓
+Allowed Transformation
+  ↓
+Preservation Check
+  ↓
+Mutation Control
+  ↓
+Risk Assessment
+  ↓
+Audit / Human Review
+
 Validation
 
 Install dependencies:
