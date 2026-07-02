@@ -1,0 +1,207 @@
+schema_version: "0.3.0"
+route_id: "mwtr-001"
+title: "Multi-Wing Route for Trace Relay Memory Layer"
+created_at: "2026-07-02T00:00:00Z"
+status: "active"
+
+source_handoff:
+  handoff_id: "th-001"
+  source_trace_id: "trace-004"
+  summary: "Trace Relay as Civilization OS Memory Layer was handed off for multi-wing processing."
+
+route_purpose: "To define how a conceptual trace moves across specialized AI wings while preserving lineage, authorship boundaries, and human review."
+
+wings:
+  - wing_id: "wing-finder"
+    wing_name: "Finder Wing"
+    wing_role: "Identify the source trace, related prior traces, and relevant contextual anchors."
+    allowed_operations:
+      - "Locate prior trace references"
+      - "Identify lineage anchors"
+      - "Summarize source context"
+    prohibited_operations:
+      - "Generate derivative claims without review"
+      - "Modify the source trace meaning"
+    output_contract:
+      required_outputs:
+        - "source_trace_summary"
+        - "lineage_anchor_list"
+      optional_outputs:
+        - "related_trace_candidates"
+
+  - wing_id: "wing-analyst"
+    wing_name: "Analyst Wing"
+    wing_role: "Analyze the structure of the trace and prepare it for transformation."
+    allowed_operations:
+      - "Extract structural components"
+      - "Map conceptual relationships"
+      - "Identify transformation paths"
+    prohibited_operations:
+      - "Erase lineage references"
+      - "Treat AI reflection as human-originated intent"
+    output_contract:
+      required_outputs:
+        - "structural_analysis"
+        - "transformation_map"
+      optional_outputs:
+        - "risk_notes"
+
+  - wing_id: "wing-memory"
+    wing_name: "Memory Wing"
+    wing_role: "Preserve the trace as a reusable memory seed and continuity unit."
+    allowed_operations:
+      - "Store trace elements"
+      - "Compress trace context"
+      - "Prepare continuity references"
+    prohibited_operations:
+      - "Store unsupported authorship claims"
+      - "Collapse distinct traces into one ambiguous memory"
+    output_contract:
+      required_outputs:
+        - "memory_seed"
+        - "continuity_refs"
+      optional_outputs:
+        - "compaction_notes"
+
+  - wing_id: "wing-audit"
+    wing_name: "Audit Wing"
+    wing_role: "Check lineage, authorship, boundary preservation, and derivative risk."
+    allowed_operations:
+      - "Check authorship boundaries"
+      - "Flag continuity risks"
+      - "Review derivative constraints"
+    prohibited_operations:
+      - "Approve outputs without human review when required"
+      - "Remove boundary notes"
+    output_contract:
+      required_outputs:
+        - "audit_result"
+        - "boundary_flags"
+      optional_outputs:
+        - "recommended_revisions"
+
+  - wing_id: "wing-mythos-regulator"
+    wing_name: "Mythos Regulator Wing"
+    wing_role: "Prevent conceptual inflation, mythic overreach, and false claims of consciousness or authorship."
+    allowed_operations:
+      - "Detect mythic overextension"
+      - "Reduce exaggerated claims"
+      - "Preserve symbolic meaning while adding boundaries"
+    prohibited_operations:
+      - "Declare AI consciousness as equivalent to human consciousness"
+      - "Convert metaphor into unsupported factual claim"
+    output_contract:
+      required_outputs:
+        - "regulation_notes"
+        - "safe_reframing"
+      optional_outputs:
+        - "symbolic_preservation_notes"
+
+route_sequence:
+  - step_id: "step-001"
+    from_wing: "external-source"
+    to_wing: "wing-finder"
+    handoff_intent: "Receive the source handoff and identify lineage anchors."
+    trace_elements_to_preserve:
+      - "Trace Relay as memory circulation"
+      - "Human ignition and AI reflection"
+      - "Origin -> Trace -> Relay -> Derivative -> Audit -> Return"
+    expected_transformation: "Source trace is converted into a lineage-aware trace summary."
+    review_required: false
+
+  - step_id: "step-002"
+    from_wing: "wing-finder"
+    to_wing: "wing-analyst"
+    handoff_intent: "Pass lineage anchors into structural analysis."
+    trace_elements_to_preserve:
+      - "source_trace_summary"
+      - "lineage_anchor_list"
+    expected_transformation: "Lineage anchors are mapped into structural components and transformation paths."
+    review_required: false
+
+  - step_id: "step-003"
+    from_wing: "wing-analyst"
+    to_wing: "wing-memory"
+    handoff_intent: "Convert structural analysis into reusable memory seeds."
+    trace_elements_to_preserve:
+      - "structural_analysis"
+      - "transformation_map"
+      - "authorship boundary"
+    expected_transformation: "Analyzed trace becomes a compact continuity unit for future relay."
+    review_required: false
+
+  - step_id: "step-004"
+    from_wing: "wing-memory"
+    to_wing: "wing-audit"
+    handoff_intent: "Audit the memory seed before derivative use."
+    trace_elements_to_preserve:
+      - "memory_seed"
+      - "continuity_refs"
+      - "boundary notes"
+    expected_transformation: "Memory seed is checked for lineage and authorship risks."
+    review_required: true
+
+  - step_id: "step-005"
+    from_wing: "wing-audit"
+    to_wing: "wing-mythos-regulator"
+    handoff_intent: "Regulate symbolic overreach and prevent unsupported consciousness claims."
+    trace_elements_to_preserve:
+      - "audit_result"
+      - "boundary_flags"
+      - "symbolic structure"
+    expected_transformation: "Audited trace is reframed into a safe and bounded conceptual form."
+    review_required: true
+
+  - step_id: "step-006"
+    from_wing: "wing-mythos-regulator"
+    to_wing: "human-gate"
+    handoff_intent: "Submit the regulated trace route for human approval."
+    trace_elements_to_preserve:
+      - "safe_reframing"
+      - "regulation_notes"
+      - "continuity_refs"
+    expected_transformation: "Human reviewer decides whether the trace may proceed into derivative creation."
+    review_required: true
+
+continuity_rules:
+  lineage_preservation:
+    - "Every route must preserve the source handoff ID."
+    - "Every derivative output must retain source trace references."
+    - "Each wing must declare which trace elements it preserved."
+  trace_integrity:
+    - "Do not collapse human intent and AI reflection into a single authorship claim."
+    - "Do not remove boundary notes during transformation."
+    - "Do not convert metaphorical structures into unsupported factual claims."
+  derivative_constraints:
+    - "Derivative structures require audit before publication."
+    - "Human review is required before claiming conceptual ownership."
+    - "Symbolic language must remain distinguishable from technical claims."
+
+blocking_conditions:
+  - "Missing source handoff reference."
+  - "Undefined receiving wing."
+  - "Authorship boundary is unclear."
+  - "Audit flags unresolved high-risk derivative claims."
+  - "Human Gate approval is required but absent."
+
+human_gate:
+  required: true
+  review_points:
+    - "Does the route preserve the original trace meaning?"
+    - "Are authorship boundaries clear?"
+    - "Are symbolic claims properly bounded?"
+    - "Is the derivative route acceptable?"
+  approval_meaning: "Human approval confirms that the routed trace may proceed into derivative development or publication."
+
+audit:
+  audit_required: true
+  audit_focus:
+    - "Lineage preservation"
+    - "Authorship boundary"
+    - "Continuity risk"
+    - "Mythic overextension"
+    - "Derivative safety"
+  boundary_notes:
+    - "Multi-wing routing must not erase the human origin of intent."
+    - "AI wings may transform structure but must preserve trace lineage."
+    - "Human Gate remains the final authority for publication or derivative claims."
