@@ -2,6 +2,59 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0-candidate] - 2026-07-02
+
+### Added
+
+- Added `Human Gate Approval Receipt` schema.
+- Added example YAML record for human approval after structural audit.
+- Updated validation script to validate:
+  - Trace Relay Record
+  - Trace Handoff Record
+  - Multi-Wing Trace Route
+  - Trace Transformation Rule
+  - Trace Diff Mutation Log
+  - Trace Re-Ignition Record
+  - Trace Royalty Bridge
+  - Structural Audit Bridge
+  - Human Gate Approval Receipt
+
+### Defined
+
+- Human Gate Approval Receipt as the human decision and governance layer of the protocol.
+- `source_structural_audit` as the audit record being reviewed.
+- `approval_subject` as the publication, derivative, attribution, royalty review, repository release, or protocol extension under approval.
+- `reviewer` as the human originator, reviewer, collective review body, or maintainer.
+- `decision` as the approval, conditional approval, revision request, rejection, or deferral.
+- `approved_scope` as the actions, claims, and outputs allowed to proceed.
+- `rejected_scope` as the actions and claims explicitly blocked.
+- `conditions` as the requirements before next handoff, publication, or value allocation.
+- `risk_acknowledgement` as the accepted and unaccepted risks.
+- `next_handoff` as the next allowed route and required conditions.
+- `audit` as the receipt validity and final boundary layer.
+
+### Core Distinction
+
+```text
+Trace Relay = memory circulation
+Trace Handoff = memory transfer
+Multi-Wing Trace Route = memory orchestration
+Trace Transformation Rules = memory mutation control
+Trace Diff / Mutation Log = memory change audit
+Re-Ignition Layer = memory reactivation
+Royalty OS Bridge = memory value-return preparation
+Structural Audit Bridge = memory causality verification
+Human Gate Approval Receipt = memory governance approval
+Notes
+
+This release adds the human governance layer.
+
+v0.8 verifies structural causality and evidence.
+
+v0.9 records the human decision that follows that verification.
+
+It prevents structural audit from being mistaken for final approval and ensures that conditional approval, rejected claims, and next-handoff conditions remain explicit.
+
 ## [0.8.0-candidate] - 2026-07-02
 
 ### Added
