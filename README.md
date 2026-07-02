@@ -90,6 +90,70 @@ Trace Relay does not claim that AI memory is human consciousness.
 
 Instead, it defines a practical structure for preserving and relaying conceptual traces while keeping human review, authorship, and boundary awareness explicit.
 
+## v0.2 Scope — Trace Handoff Layer
+
+Version 0.2 introduces the **Trace Handoff Layer**.
+
+While v0.1 defines how a trace is recorded and relayed as a memory circulation unit, v0.2 defines how that trace can be handed off to another dialogue, AI wing, memory layer, audit layer, repository, document, or derivative structure.
+
+## What is Trace Handoff?
+
+Trace Handoff is the process of transferring a preserved conceptual trace into a new operational context.
+
+A handoff record answers the following questions:
+
+- What trace is being handed off?
+- Where did it come from?
+- Where is it going?
+- Which elements must be preserved?
+- What transformation is intended?
+- What boundaries must not be crossed?
+- Who must review the handoff?
+- How should the lineage continue?
+
+## Trace Relay vs Trace Handoff
+
+| Layer | Purpose |
+|---|---|
+| Trace Relay | Preserves and develops a conceptual trace across time |
+| Trace Handoff | Transfers a trace into another context, wing, layer, or derivative structure |
+
+Trace Relay is memory circulation.
+
+Trace Handoff is memory transfer.
+
+## v0.2 Record Structure
+
+A Trace Handoff Record contains:
+
+- `source_trace`
+- `handoff_source`
+- `handoff_target`
+- `handoff_payload`
+- `route`
+- `continuity`
+- `audit`
+
+## Handoff Flow
+
+```text
+Source Trace
+  ↓
+Handoff Source
+  ↓
+Handoff Payload
+  ↓
+Target Layer / Wing / Structure
+  ↓
+Continuity Check
+  ↓
+Human Review
+Design Principle
+
+Trace Handoff should preserve continuity without erasing authorship.
+
+It should allow traces to move across systems while keeping lineage, boundary conditions, and human review explicit.
+
 Validation
 
 Install dependencies:
