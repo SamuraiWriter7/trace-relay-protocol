@@ -2,13 +2,69 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0-candidate] - 2026-07-02
+
+### Added
+
+- Added `Trace Diff / Mutation Log` schema.
+- Added example YAML record for trace mutation auditing.
+- Updated validation script to validate:
+  - Trace Relay Record
+  - Trace Handoff Record
+  - Multi-Wing Trace Route
+  - Trace Transformation Rule
+  - Trace Diff Mutation Log
+
+### Defined
+
+- Trace Diff / Mutation Log as the change-audit layer of the protocol.
+- `source_trace` as the trace being transformed.
+- `source_rule` as the transformation rule governing mutation.
+- `mutation_context` as the type, actor, purpose, and target output of the mutation.
+- `before_state` as the trace state before transformation.
+- `after_state` as the trace state after transformation.
+- `diff_summary` as the preserved, added, removed, and modified elements.
+- `mutation_events` as structured records of transformation operations.
+- `preservation_check` as the lineage, authorship, symbolic/factual, and human review verification layer.
+- `risk_delta` as the risk change after mutation.
+- `approval` as the human review and next-handoff gate.
+- `audit` as the final boundary and validation layer.
+
+### Core Distinction
+
+```text
+Trace Relay = memory circulation
+Trace Handoff = memory transfer
+Multi-Wing Trace Route = memory orchestration
+Trace Transformation Rules = memory mutation control
+Trace Diff / Mutation Log = memory change audit
+```
+
+### Notes
+
+This release records what actually changed during trace transformation.
+
+It prevents silent mutation, origin erasure, untracked semantic drift, and invisible authorship shifts.
+
+v0.5 completes the first full arc of the Trace Relay Protocol:
+
+```text
+Record -> Handoff -> Route -> Transform -> Diff
+```
+
+---
+
 ## [0.4.0-candidate] - 2026-07-02
 
 ### Added
 
 - Added `Trace Transformation Rule` schema.
 - Added example YAML record for transformation control.
-- Updated validation script to validate Trace Relay, Trace Handoff, Multi-Wing Trace Route, and Trace Transformation Rule records.
+- Updated validation script to validate:
+  - Trace Relay Record
+  - Trace Handoff Record
+  - Multi-Wing Trace Route
+  - Trace Transformation Rule
 
 ### Defined
 
@@ -31,6 +87,15 @@ Trace Relay = memory circulation
 Trace Handoff = memory transfer
 Multi-Wing Trace Route = memory orchestration
 Trace Transformation Rules = memory mutation control
+```
+
+### Notes
+
+This release defines how conceptual traces may be transformed without becoming origin-erased, semantically drifted, or mythically overextended.
+
+It prepares the project for future derivative output receipts, Human Gate approval records, and Trace Diff / Mutation Logs.
+
+---
 
 ## [0.3.0-candidate] - 2026-07-02
 
@@ -38,7 +103,10 @@ Trace Transformation Rules = memory mutation control
 
 - Added `Multi-Wing Trace Route` schema.
 - Added example YAML record for multi-wing trace routing.
-- Updated validation script to validate Trace Relay, Trace Handoff, and Multi-Wing Trace Route records.
+- Updated validation script to validate:
+  - Trace Relay Record
+  - Trace Handoff Record
+  - Multi-Wing Trace Route
 
 ### Defined
 
@@ -57,6 +125,15 @@ Trace Transformation Rules = memory mutation control
 Trace Relay = memory circulation
 Trace Handoff = memory transfer
 Multi-Wing Trace Route = memory orchestration
+```
+
+### Notes
+
+This release extends Trace Relay Protocol from simple trace transfer into multi-wing coordination.
+
+It prepares the project for future trace transformation rules, receiving wing responsibilities, audit bridges, and derivative lineage control.
+
+---
 
 ## [0.2.0-candidate] - 2026-07-02
 
@@ -82,6 +159,15 @@ Multi-Wing Trace Route = memory orchestration
 ```text
 Trace Relay = memory circulation
 Trace Handoff = memory transfer
+```
+
+### Notes
+
+This release extends the protocol from preserving conceptual traces to transferring them across systems and specialized contexts.
+
+It prepares the project for future Multi-Wing Trace Handoff, where Finder, Analyst, Memory, Audit, Mythos Regulator, and Human Gate layers can pass trace payloads between each other.
+
+---
 
 ## [0.1.0-candidate] - 2026-07-02
 
@@ -92,6 +178,7 @@ Trace Handoff = memory transfer
 - Added example YAML record.
 - Added validation script for schema-example consistency.
 - Added GitHub Actions workflow for automated validation.
+- Added initial README and CHANGELOG documentation.
 
 ### Defined
 
@@ -107,6 +194,8 @@ Trace Handoff = memory transfer
 
 ```text
 Origin -> Trace -> Relay -> Derivative -> Audit -> Return
-Notes
+```
+
+### Notes
 
 This version establishes the minimum viable structure for treating dialogue-generated insights as relayable memory units.
