@@ -1,0 +1,473 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/trace-royalty-bridge.schema.json",
+  "title": "Trace Royalty Bridge",
+  "description": "A bridge record for connecting re-ignited conceptual traces to derivative structures, contribution assessment, attribution, royalty logic, and value-return flows.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "royalty_bridge_id",
+    "title",
+    "created_at",
+    "status",
+    "source_re_ignition",
+    "derivative_context",
+    "lineage_basis",
+    "contribution_assessment",
+    "value_return_scope",
+    "allocation_rules",
+    "eligibility_conditions",
+    "royalty_receipt_output",
+    "audit"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.7.0"
+    },
+    "royalty_bridge_id": {
+      "type": "string",
+      "pattern": "^trb-[A-Za-z0-9._-]+$",
+      "description": "Unique identifier for the trace royalty bridge record."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "active", "approved", "blocked", "archived"]
+    },
+    "source_re_ignition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "re_ignition_id",
+        "source_trace_id",
+        "source_mutation_log_id",
+        "summary"
+      ],
+      "properties": {
+        "re_ignition_id": {
+          "type": "string",
+          "pattern": "^ri-[A-Za-z0-9._-]+$"
+        },
+        "source_trace_id": {
+          "type": "string",
+          "pattern": "^trace-[A-Za-z0-9._-]+$"
+        },
+        "source_mutation_log_id": {
+          "type": "string",
+          "pattern": "^tdm-[A-Za-z0-9._-]+$"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "derivative_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "derivative_id",
+        "derivative_title",
+        "derivative_type",
+        "derivative_summary",
+        "evidence_refs"
+      ],
+      "properties": {
+        "derivative_id": {
+          "type": "string",
+          "pattern": "^deriv-[A-Za-z0-9._-]+$"
+        },
+        "derivative_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "derivative_type": {
+          "type": "string",
+          "enum": [
+            "article",
+            "repository",
+            "schema",
+            "document",
+            "book",
+            "gpt",
+            "protocol_extension",
+            "external_product",
+            "other"
+          ]
+        },
+        "derivative_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "lineage_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "origin_trace_ids",
+        "contributing_trace_ids",
+        "route_refs",
+        "rule_refs",
+        "mutation_log_refs",
+        "re_ignition_refs"
+      ],
+      "properties": {
+        "origin_trace_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^trace-[A-Za-z0-9._-]+$"
+          }
+        },
+        "contributing_trace_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^trace-[A-Za-z0-9._-]+$"
+          }
+        },
+        "route_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^mwtr-[A-Za-z0-9._-]+$"
+          }
+        },
+        "rule_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^ttr-[A-Za-z0-9._-]+$"
+          }
+        },
+        "mutation_log_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^tdm-[A-Za-z0-9._-]+$"
+          }
+        },
+        "re_ignition_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^ri-[A-Za-z0-9._-]+$"
+          }
+        }
+      }
+    },
+    "contribution_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_origin",
+        "derivative_contributions"
+      ],
+      "properties": {
+        "primary_origin": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "origin_type",
+            "origin_name",
+            "origin_summary",
+            "claim_status"
+          ],
+          "properties": {
+            "origin_type": {
+              "type": "string",
+              "enum": ["human", "ai_assisted_human", "collective", "external_source"]
+            },
+            "origin_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "origin_summary": {
+              "type": "string",
+              "minLength": 1
+            },
+            "claim_status": {
+              "type": "string",
+              "enum": ["proposed", "reviewed", "approved", "rejected"]
+            }
+          }
+        },
+        "derivative_contributions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "contributor_id",
+              "contributor_type",
+              "contributor_name",
+              "contribution_type",
+              "contribution_summary",
+              "weight_hint",
+              "claim_status"
+            ],
+            "properties": {
+              "contributor_id": {
+                "type": "string",
+                "pattern": "^contrib-[A-Za-z0-9._-]+$"
+              },
+              "contributor_type": {
+                "type": "string",
+                "enum": ["human", "ai", "wing", "system", "external_source"]
+              },
+              "contributor_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "contribution_type": {
+                "type": "string",
+                "enum": [
+                  "conceptual_origin",
+                  "structuring",
+                  "transformation",
+                  "audit",
+                  "implementation",
+                  "publication",
+                  "reference",
+                  "other"
+                ]
+              },
+              "contribution_summary": {
+                "type": "string",
+                "minLength": 1
+              },
+              "weight_hint": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "critical"]
+              },
+              "claim_status": {
+                "type": "string",
+                "enum": ["proposed", "reviewed", "approved", "rejected"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "value_return_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "return_enabled",
+        "return_type",
+        "currency_or_unit",
+        "applies_to"
+      ],
+      "properties": {
+        "return_enabled": {
+          "type": "boolean"
+        },
+        "return_type": {
+          "type": "string",
+          "enum": [
+            "none",
+            "attribution",
+            "royalty",
+            "revenue_share",
+            "credit",
+            "donation",
+            "compute_credit"
+          ]
+        },
+        "currency_or_unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "applies_to": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "direct_revenue",
+              "derivative_sales",
+              "citation_credit",
+              "compute_usage",
+              "repository_usage",
+              "publication",
+              "licensing"
+            ]
+          }
+        }
+      }
+    },
+    "allocation_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allocation_mode",
+        "proposed_allocations",
+        "review_notes"
+      ],
+      "properties": {
+        "allocation_mode": {
+          "type": "string",
+          "enum": [
+            "none",
+            "manual_review",
+            "fixed_percentage",
+            "weighted_lineage",
+            "audit_based"
+          ]
+        },
+        "proposed_allocations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "beneficiary_id",
+              "beneficiary_name",
+              "allocation_type",
+              "allocation_value",
+              "allocation_unit",
+              "basis_refs"
+            ],
+            "properties": {
+              "beneficiary_id": {
+                "type": "string",
+                "pattern": "^beneficiary-[A-Za-z0-9._-]+$"
+              },
+              "beneficiary_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "allocation_type": {
+                "type": "string",
+                "enum": ["percentage", "share", "credit", "attribution_only"]
+              },
+              "allocation_value": {
+                "type": "number",
+                "minimum": 0
+              },
+              "allocation_unit": {
+                "type": "string",
+                "minLength": 1
+              },
+              "basis_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        "review_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "eligibility_conditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_conditions",
+        "blocking_conditions"
+      ],
+      "properties": {
+        "required_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "blocking_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "royalty_receipt_output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "output_status",
+        "summary",
+        "next_handoff"
+      ],
+      "properties": {
+        "receipt_id": {
+          "type": "string",
+          "pattern": "^rr-[A-Za-z0-9._-]+$"
+        },
+        "output_status": {
+          "type": "string",
+          "enum": ["proposed", "active", "approved", "blocked"]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next_handoff": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audit_required",
+        "human_review_required",
+        "audit_result",
+        "boundary_notes"
+      ],
+      "properties": {
+        "audit_required": {
+          "type": "boolean"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "audit_result": {
+          "type": "string",
+          "enum": ["pass", "pass_with_notes", "fail", "pending"]
+        },
+        "boundary_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
