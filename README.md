@@ -538,6 +538,89 @@ trace-relay-protocol/
     └── workflows/
         └── validate.yml
 ```
+## v0.7 Scope — Royalty OS Bridge
+
+Version 0.7 introduces the **Royalty OS Bridge**.
+
+While v0.6 defines how audited traces can be re-ignited into new questions or routes, v0.7 defines how those re-ignited traces may connect to derivative structures, attribution, contribution assessment, and value-return logic.
+
+## What is Royalty OS Bridge?
+
+Royalty OS Bridge is the process of connecting trace lineage to value-return structures.
+
+It does not automatically grant monetary royalty.
+
+Instead, it prepares auditable attribution and value-return conditions by recording:
+
+- which trace was re-ignited
+- what derivative structure was created
+- which traces contributed to the derivative
+- who or what contributed to the structure
+- what kind of value return is being considered
+- what allocation logic is proposed
+- what conditions must be satisfied
+- what claims are blocked until audit
+
+## Core Distinction
+
+| Layer | Purpose |
+|---|---|
+| Trace Relay | Preserves and develops a conceptual trace across time |
+| Trace Handoff | Transfers a trace into another context, wing, layer, or derivative structure |
+| Multi-Wing Trace Route | Defines how traces move through multiple specialized wings |
+| Trace Transformation Rules | Defines how traces may be changed without breaking lineage |
+| Trace Diff / Mutation Log | Records what changed during transformation |
+| Re-Ignition Layer | Reactivates audited traces into new questions or routes |
+| Royalty OS Bridge | Connects trace lineage to attribution and value-return preparation |
+
+Trace Relay is memory circulation.
+
+Trace Handoff is memory transfer.
+
+Multi-Wing Trace Route is memory orchestration.
+
+Trace Transformation Rules are memory mutation control.
+
+Trace Diff / Mutation Log is memory change audit.
+
+Re-Ignition Layer is memory reactivation.
+
+Royalty OS Bridge is memory value-return preparation.
+
+## v0.7 Record Structure
+
+A Trace Royalty Bridge contains:
+
+- `source_re_ignition`
+- `derivative_context`
+- `lineage_basis`
+- `contribution_assessment`
+- `value_return_scope`
+- `allocation_rules`
+- `eligibility_conditions`
+- `royalty_receipt_output`
+- `audit`
+
+## Royalty Bridge Flow
+
+```text
+Re-Ignited Trace
+  ↓
+Derivative Context
+  ↓
+Lineage Basis
+  ↓
+Contribution Assessment
+  ↓
+Value Return Scope
+  ↓
+Allocation Rules
+  ↓
+Eligibility Conditions
+  ↓
+Royalty Receipt Output
+  ↓
+Audit / Human Review
 
 ## Validation
 
