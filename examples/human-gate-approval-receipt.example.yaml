@@ -1,0 +1,129 @@
+schema_version: "0.9.0"
+approval_receipt_id: "hgar-001"
+title: "Human Gate Approval for Trace Relay Royalty Bridge"
+created_at: "2026-07-02T00:00:00Z"
+status: "conditional"
+
+source_structural_audit:
+  audit_bridge_id: "sab-001"
+  audit_result: "pass_with_notes"
+  audit_decision: "approve_with_notes"
+  source_derivative_id: "deriv-001"
+  source_trace_id: "trace-004"
+  summary: "Structural audit supports attribution-first value-return preparation, but blocks automatic royalty or revenue-share claims until derivative evidence and human approval are attached."
+
+approval_subject:
+  subject_type: "value_return_preparation"
+  subject_title: "Trace Relay Protocol as Civilization OS Dialogue Layer"
+  subject_summary: "A derivative protocol extension connecting Trace Relay lineage to attribution-first value-return preparation."
+  requested_approval: "Approve attribution-first value-return preparation and allow next handoff to derivative output record, while blocking automatic monetary royalty."
+
+reviewer:
+  reviewer_type: "human_originator"
+  reviewer_name: "Human Originator"
+  authority_scope:
+    - "publication_approval"
+    - "derivative_approval"
+    - "attribution_approval"
+    - "royalty_review_approval"
+    - "protocol_extension_approval"
+
+decision:
+  decision_type: "approve_with_conditions"
+  decision_summary: "Approved for attribution-first value-return preparation, but monetary royalty and automatic revenue-share remain blocked."
+  decision_reason: "Trace lineage, mutation logs, re-ignition record, royalty bridge, and structural audit are sufficient for attribution preparation, but not yet sufficient for automatic monetary allocation."
+  effective_status: "conditional"
+
+approved_scope:
+  approved_actions:
+    - "create_derivative"
+    - "grant_attribution"
+    - "prepare_royalty_review"
+    - "extend_protocol"
+  approved_claims:
+    - "attribution"
+    - "citation"
+    - "credit"
+    - "manual_royalty_review"
+    - "value_return_preparation"
+    - "lineage_dependency"
+    - "structural_influence"
+  approved_outputs:
+    - "Derivative Output Record may be prepared."
+    - "Attribution-first value-return language may be used."
+    - "Manual royalty review may be opened after derivative evidence is attached."
+
+rejected_scope:
+  rejected_actions:
+    - "automatic_royalty"
+    - "automatic_revenue_share"
+    - "exclusive_ownership_claim"
+    - "ai_autonomous_authorship_claim"
+    - "unreviewed_licensing"
+  rejected_claims:
+    - "automatic_monetary_entitlement"
+    - "exclusive_origin_claim"
+    - "unsupported_derivative_claim"
+    - "unverified_value_claim"
+    - "ai_independent_authorship"
+  rejection_notes:
+    - "Automatic monetary allocation is not approved."
+    - "AI-assisted structuring must not be presented as autonomous authorship."
+    - "Exclusive ownership claims require separate legal and structural review."
+
+conditions:
+  required_before_next_handoff:
+    - "Preserve source trace, mutation log, re-ignition, royalty bridge, and structural audit references."
+    - "Carry forward all conditional approval notes."
+    - "Keep automatic monetary allocation disabled."
+  required_before_publication:
+    - "Include attribution wording that distinguishes human origin from AI-assisted structuring."
+    - "Do not imply automatic royalty eligibility."
+    - "Retain audit notes if value-return claims are mentioned."
+  required_before_value_allocation:
+    - "Attach derivative publication or repository evidence."
+    - "Complete manual royalty review."
+    - "Obtain explicit human approval for allocation logic."
+  blocking_conditions:
+    - "Missing derivative evidence."
+    - "Human approval notes removed."
+    - "Automatic royalty logic activated without review."
+    - "Authorship boundary becomes unclear."
+
+risk_acknowledgement:
+  acknowledged_risks:
+    - "semantic_drift"
+    - "authorship_ambiguity"
+    - "symbolic_overextension"
+    - "value_claim_overreach"
+    - "insufficient_evidence"
+    - "external_misinterpretation"
+  accepted_risks:
+    - "Attribution-first use may proceed with visible audit notes."
+    - "Derivative preparation may proceed while monetary allocation remains disabled."
+  unaccepted_risks:
+    - "Automatic royalty without derivative evidence."
+    - "AI autonomous authorship claim."
+    - "Exclusive ownership claim without separate review."
+  risk_notes:
+    - "The approval is conditional, not absolute."
+    - "Attribution preparation is approved; monetary allocation is not."
+    - "Further handoff must preserve boundary notes."
+
+next_handoff:
+  next_handoff_allowed: true
+  next_target: "Derivative Output Record"
+  handoff_conditions:
+    - "Include this Human Gate Approval Receipt ID."
+    - "Preserve all approved and rejected scopes."
+    - "Carry forward conditions for publication and value allocation."
+  recommended_next_record: "derivative_output_record"
+
+audit:
+  receipt_valid: true
+  human_review_completed: true
+  audit_result: "pass_with_notes"
+  boundary_notes:
+    - "Human Gate approval records the human decision; it does not replace legal review."
+    - "Conditional approval must not be represented as full royalty approval."
+    - "This receipt authorizes next-step derivative preparation only within the approved scope."
