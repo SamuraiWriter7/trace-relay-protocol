@@ -28,6 +28,11 @@ VALIDATION_TARGETS = [
         "schema": ROOT / "schemas" / "trace-transformation-rule.schema.json",
         "example": ROOT / "examples" / "trace-transformation-rule.example.yaml",
     },
+    {
+        "name": "Trace Diff Mutation Log",
+        "schema": ROOT / "schemas" / "trace-diff-mutation-log.schema.json",
+        "example": ROOT / "examples" / "trace-diff-mutation-log.example.yaml",
+    },
 ]
 
 
