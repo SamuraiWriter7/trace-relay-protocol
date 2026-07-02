@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0-candidate] - 2026-07-02
+
+### Added
+
+- Added `Trace Transformation Rule` schema.
+- Added example YAML record for transformation control.
+- Updated validation script to validate Trace Relay, Trace Handoff, Multi-Wing Trace Route, and Trace Transformation Rule records.
+
+### Defined
+
+- Trace Transformation Rules as the mutation-control layer of the protocol.
+- `applies_to` as the trace types, wing IDs, and route IDs covered by the rule.
+- `source_route` as the originating route and source trace context.
+- `transformation_scope` as the intended type and purpose of transformation.
+- `allowed_transformations` as operations permitted under explicit conditions.
+- `prohibited_transformations` as operations that would break lineage, authorship boundaries, or symbolic safety.
+- `preservation_requirements` as required elements that must remain visible.
+- `mutation_controls` as the maximum allowed transformation level and review requirements.
+- `risk_assessment` as the semantic drift, authorship, and mythic overextension risk layer.
+- `output_requirements` as required and forbidden outputs.
+- `audit` as the final review and boundary layer.
+
+### Core Distinction
+
+```text
+Trace Relay = memory circulation
+Trace Handoff = memory transfer
+Multi-Wing Trace Route = memory orchestration
+Trace Transformation Rules = memory mutation control
+
 ## [0.3.0-candidate] - 2026-07-02
 
 ### Added
