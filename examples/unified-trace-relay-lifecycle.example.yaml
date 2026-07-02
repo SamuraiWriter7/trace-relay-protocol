@@ -1,0 +1,154 @@
+schema_version: "1.0.0"
+lifecycle_id: "utrl-001"
+title: "Unified Lifecycle for Trace Relay Protocol First Arc"
+created_at: "2026-07-02T00:00:00Z"
+status: "completed_with_conditions"
+
+lifecycle_purpose: "To unify the full Trace Relay Protocol lifecycle from dialogue-generated trace to human-approved continuation."
+
+origin_summary:
+  origin_type: "dialogue"
+  origin_trace_id: "trace-004"
+  origin_title: "Trace Relay as Civilization OS Memory Layer"
+  origin_description: "A conceptual trace defining Trace Relay as a memory circulation layer for preserving and developing dialogue-generated thought."
+
+layer_refs:
+  trace_relay_record: "trr-001"
+  trace_handoff_record: "th-001"
+  multi_wing_trace_route: "mwtr-001"
+  trace_transformation_rule: "ttr-001"
+  trace_diff_mutation_log: "tdm-001"
+  trace_re_ignition_record: "ri-001"
+  trace_royalty_bridge: "trb-001"
+  structural_audit_bridge: "sab-001"
+  human_gate_approval_receipt: "hgar-001"
+
+phase_sequence:
+  - phase_id: "phase-001"
+    phase_name: "record"
+    phase_status: "completed"
+    record_ref: "trr-001"
+    summary: "The original conceptual trace was recorded as a relayable memory unit."
+  - phase_id: "phase-002"
+    phase_name: "handoff"
+    phase_status: "completed"
+    record_ref: "th-001"
+    summary: "The trace was prepared for transfer into another context."
+  - phase_id: "phase-003"
+    phase_name: "route"
+    phase_status: "completed"
+    record_ref: "mwtr-001"
+    summary: "The trace was routed through specialized AI wings with explicit continuity rules."
+  - phase_id: "phase-004"
+    phase_name: "transform"
+    phase_status: "completed"
+    record_ref: "ttr-001"
+    summary: "Transformation rules were defined to control semantic drift and preserve lineage."
+  - phase_id: "phase-005"
+    phase_name: "diff"
+    phase_status: "completed"
+    record_ref: "tdm-001"
+    summary: "Changes during transformation were recorded as a mutation log."
+  - phase_id: "phase-006"
+    phase_name: "re_ignition"
+    phase_status: "completed"
+    record_ref: "ri-001"
+    summary: "The audited trace was reactivated as a new question toward value-return logic."
+  - phase_id: "phase-007"
+    phase_name: "royalty_bridge"
+    phase_status: "completed_with_notes"
+    record_ref: "trb-001"
+    summary: "The re-ignited trace was connected to attribution-first value-return preparation."
+  - phase_id: "phase-008"
+    phase_name: "structural_audit"
+    phase_status: "completed_with_notes"
+    record_ref: "sab-001"
+    summary: "Structural causality and evidence were audited before value claims could proceed."
+  - phase_id: "phase-009"
+    phase_name: "human_gate"
+    phase_status: "completed_with_notes"
+    record_ref: "hgar-001"
+    summary: "Human Gate conditionally approved derivative preparation while blocking automatic monetary royalty."
+
+current_state:
+  current_phase: "completed"
+  lifecycle_status: "completed_with_conditions"
+  last_completed_phase: "human_gate"
+  open_conditions:
+    - "Attach derivative publication or repository evidence before monetary royalty review."
+    - "Complete manual royalty review before allocation logic is activated."
+    - "Carry forward all Human Gate conditions into the next record."
+  blocked_claims:
+    - "automatic monetary entitlement"
+    - "automatic revenue-share"
+    - "exclusive origin claim"
+    - "AI autonomous authorship claim"
+
+completion_criteria:
+  required_completed_phases:
+    - "record"
+    - "handoff"
+    - "route"
+    - "transform"
+    - "diff"
+    - "re_ignition"
+    - "royalty_bridge"
+    - "structural_audit"
+    - "human_gate"
+  required_audit_results:
+    - "pass_with_notes"
+    - "conditional"
+  required_human_gate_status: "conditional"
+  completion_result: "complete_with_conditions"
+
+continuity_controls:
+  must_preserve:
+    - "source trace lineage"
+    - "handoff references"
+    - "route references"
+    - "transformation rule references"
+    - "mutation log references"
+    - "re-ignition references"
+    - "royalty bridge references"
+    - "structural audit references"
+    - "human approval receipt references"
+  must_not_claim:
+    - "Do not claim automatic royalty without derivative evidence."
+    - "Do not represent AI-assisted structuring as autonomous authorship."
+    - "Do not treat conditional approval as full approval."
+    - "Do not erase origin lineage in future derivatives."
+  must_carry_forward:
+    - "Human Gate conditions."
+    - "Blocked claims."
+    - "Audit notes."
+    - "Attribution distinction between human origin and AI-assisted structuring."
+
+next_cycle:
+  next_cycle_allowed: true
+  next_cycle_type: "derivative_output_record"
+  next_cycle_trigger: "A derivative output is ready to be recorded under the approved conditional scope."
+  recommended_next_record: "Derivative Output Record"
+  conditions:
+    - "Include unified lifecycle ID."
+    - "Attach Human Gate Approval Receipt ID."
+    - "Keep automatic monetary allocation disabled."
+    - "Preserve all lineage and audit references."
+
+governance:
+  human_authority_required: true
+  ai_role: "structuring_support"
+  approval_boundary: "AI may assist with reflection, routing, transformation, and audit support, but final claims require human approval."
+  governance_notes:
+    - "The lifecycle is valid as a trace continuity record."
+    - "The lifecycle does not replace legal review."
+    - "The lifecycle does not grant automatic ownership or monetary royalty."
+    - "Human review remains the final gate for escalation."
+
+audit:
+  lifecycle_valid: true
+  audit_result: "pass_with_notes"
+  human_review_completed: true
+  boundary_notes:
+    - "Unified lifecycle completed with conditions."
+    - "The next cycle may proceed only within the approved scope."
+    - "Conditional approval must remain visible in all derivative records."
