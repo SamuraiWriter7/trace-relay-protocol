@@ -33,6 +33,11 @@ VALIDATION_TARGETS = [
         "schema": ROOT / "schemas" / "trace-diff-mutation-log.schema.json",
         "example": ROOT / "examples" / "trace-diff-mutation-log.example.yaml",
     },
+    {
+        "name": "Trace Re-Ignition Record",
+        "schema": ROOT / "schemas" / "trace-re-ignition-record.schema.json",
+        "example": ROOT / "examples" / "trace-re-ignition-record.example.yaml",
+    },
 ]
 
 
