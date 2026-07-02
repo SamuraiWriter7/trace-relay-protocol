@@ -1,0 +1,129 @@
+schema_version: "0.7.0"
+royalty_bridge_id: "trb-001"
+title: "Royalty OS Bridge for Trace Relay Memory Layer"
+created_at: "2026-07-02T00:00:00Z"
+status: "active"
+
+source_re_ignition:
+  re_ignition_id: "ri-001"
+  source_trace_id: "trace-004"
+  source_mutation_log_id: "tdm-001"
+  summary: "The audited Trace Relay memory layer was re-ignited as a candidate bridge toward lineage-aware royalty and value return."
+
+derivative_context:
+  derivative_id: "deriv-001"
+  derivative_title: "Trace Relay Protocol as Civilization OS Dialogue Layer"
+  derivative_type: "protocol_extension"
+  derivative_summary: "A derivative protocol extension connecting dialogue traces to lineage-aware attribution and value return."
+  evidence_refs:
+    - "trace-004"
+    - "tdm-001"
+    - "ri-001"
+
+lineage_basis:
+  origin_trace_ids:
+    - "trace-004"
+  contributing_trace_ids:
+    - "trace-001"
+    - "trace-002"
+    - "trace-003"
+    - "trace-004"
+    - "trace-006"
+  route_refs:
+    - "mwtr-001"
+  rule_refs:
+    - "ttr-001"
+  mutation_log_refs:
+    - "tdm-001"
+  re_ignition_refs:
+    - "ri-001"
+
+contribution_assessment:
+  primary_origin:
+    origin_type: "ai_assisted_human"
+    origin_name: "Human-originated Trace Relay concept with AI-assisted structuring"
+    origin_summary: "The core concept was initiated by human inquiry and developed through AI-assisted reflection, structuring, and schema formalization."
+    claim_status: "proposed"
+  derivative_contributions:
+    - contributor_id: "contrib-001"
+      contributor_type: "human"
+      contributor_name: "Human Originator"
+      contribution_type: "conceptual_origin"
+      contribution_summary: "Provided the original question, conceptual direction, and approval for derivative development."
+      weight_hint: "critical"
+      claim_status: "proposed"
+    - contributor_id: "contrib-002"
+      contributor_type: "ai"
+      contributor_name: "AI Structuring Assistant"
+      contribution_type: "structuring"
+      contribution_summary: "Assisted with schema design, terminology refinement, and documentation structure."
+      weight_hint: "medium"
+      claim_status: "proposed"
+    - contributor_id: "contrib-003"
+      contributor_type: "wing"
+      contributor_name: "Audit / Mythos Regulator Route"
+      contribution_type: "audit"
+      contribution_summary: "Preserved authorship boundaries, lineage references, symbolic safety, and mutation visibility."
+      weight_hint: "medium"
+      claim_status: "proposed"
+
+value_return_scope:
+  return_enabled: true
+  return_type: "attribution"
+  currency_or_unit: "credit"
+  applies_to:
+    - "publication"
+    - "repository_usage"
+    - "citation_credit"
+    - "licensing"
+
+allocation_rules:
+  allocation_mode: "manual_review"
+  proposed_allocations:
+    - beneficiary_id: "beneficiary-human-originator"
+      beneficiary_name: "Human Originator"
+      allocation_type: "attribution_only"
+      allocation_value: 1
+      allocation_unit: "primary_origin_credit"
+      basis_refs:
+        - "trace-004"
+        - "ri-001"
+    - beneficiary_id: "beneficiary-ai-assist"
+      beneficiary_name: "AI-Assisted Structuring"
+      allocation_type: "credit"
+      allocation_value: 1
+      allocation_unit: "assistive_structuring_credit"
+      basis_refs:
+        - "ttr-001"
+        - "tdm-001"
+  review_notes:
+    - "This bridge does not define automatic monetary royalty."
+    - "Attribution is enabled before revenue allocation."
+    - "Revenue-share logic requires stricter derivative evidence and human approval."
+
+eligibility_conditions:
+  required_conditions:
+    - "Derivative output must reference source trace lineage."
+    - "Human origin and AI-assisted structuring must remain distinguishable."
+    - "Royalty or revenue-share claims require separate approval."
+    - "Value-return logic must be based on auditable derivative evidence."
+  blocking_conditions:
+    - "Missing source trace lineage."
+    - "Unreviewed derivative ownership claim."
+    - "Automatic royalty allocation without human approval."
+    - "AI-assisted structuring represented as independent authorship."
+
+royalty_receipt_output:
+  receipt_id: "rr-001"
+  output_status: "proposed"
+  summary: "A proposed attribution-first royalty bridge connecting Trace Relay lineage to future value-return records."
+  next_handoff: "Proceed to Structural Audit Bridge before monetary royalty or revenue-share allocation."
+
+audit:
+  audit_required: true
+  human_review_required: true
+  audit_result: "pass_with_notes"
+  boundary_notes:
+    - "This bridge enables attribution and value-return preparation, not automatic monetary entitlement."
+    - "Royalty allocation requires derivative evidence, human review, and structural audit."
+    - "AI assistance should be credited as structuring support, not treated as autonomous origin."
