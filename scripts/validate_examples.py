@@ -38,6 +38,11 @@ VALIDATION_TARGETS = [
         "schema": ROOT / "schemas" / "trace-re-ignition-record.schema.json",
         "example": ROOT / "examples" / "trace-re-ignition-record.example.yaml",
     },
+    {
+        "name": "Trace Royalty Bridge",
+        "schema": ROOT / "schemas" / "trace-royalty-bridge.schema.json",
+        "example": ROOT / "examples" / "trace-royalty-bridge.example.yaml",
+    },
 ]
 
 
