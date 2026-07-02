@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/multi-wing-trace-route.schema.json",
+  "title": "Multi-Wing Trace Route",
+  "description": "A route definition for passing conceptual traces across multiple specialized AI wings while preserving lineage, boundaries, and human review.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "route_id",
+    "title",
+    "created_at",
+    "status",
+    "source_handoff",
+    "route_purpose",
+    "wings",
+    "route_sequence",
+    "continuity_rules",
+    "blocking_conditions",
+    "human_gate",
+    "audit"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.3.0"
+    },
+    "route_id": {
+      "type": "string",
+      "pattern": "^mwtr-[A-Za-z0-9._-]+$",
+      "description": "Unique identifier for the multi-wing trace route."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "completed", "blocked", "archived"]
+    },
+    "source_handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "handoff_id",
+        "source_trace_id",
+        "summary"
+      ],
+      "properties": {
+        "handoff_id": {
+          "type": "string",
+          "pattern": "^th-[A-Za-z0-9._-]+$"
+        },
+        "source_trace_id": {
+          "type": "string",
+          "pattern": "^trace-[A-Za-z0-9._-]+$"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "route_purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "wings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "wing_id",
+          "wing_name",
+          "wing_role",
+          "allowed_operations",
+          "prohibited_operations",
+          "output_contract"
+        ],
+        "properties": {
+          "wing_id": {
+            "type": "string",
+            "pattern": "^wing-[A-Za-z0-9._-]+$"
+          },
+          "wing_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "wing_role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "allowed_operations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "prohibited_operations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "output_contract": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "required_outputs",
+              "optional_outputs"
+            ],
+            "properties": {
+              "required_outputs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "optional_outputs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "route_sequence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "step_id",
+          "from_wing",
+          "to_wing",
+          "handoff_intent",
+          "trace_elements_to_preserve",
+          "expected_transformation",
+          "review_required"
+        ],
+        "properties": {
+          "step_id": {
+            "type": "string",
+            "pattern": "^step-[A-Za-z0-9._-]+$"
+          },
+          "from_wing": {
+            "type": "string",
+            "pattern": "^(wing-[A-Za-z0-9._-]+|human-gate|external-source)$"
+          },
+          "to_wing": {
+            "type": "string",
+            "pattern": "^(wing-[A-Za-z0-9._-]+|human-gate|external-target)$"
+          },
+          "handoff_intent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "trace_elements_to_preserve": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "expected_transformation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "review_required": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "continuity_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lineage_preservation",
+        "trace_integrity",
+        "derivative_constraints"
+      ],
+      "properties": {
+        "lineage_preservation": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "trace_integrity": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "derivative_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "blocking_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "human_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "review_points",
+        "approval_meaning"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "review_points": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "approval_meaning": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audit_required",
+        "audit_focus",
+        "boundary_notes"
+      ],
+      "properties": {
+        "audit_required": {
+          "type": "boolean"
+        },
+        "audit_focus": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "boundary_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
