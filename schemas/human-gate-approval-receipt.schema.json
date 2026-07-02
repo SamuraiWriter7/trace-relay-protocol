@@ -1,0 +1,441 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/human-gate-approval-receipt.schema.json",
+  "title": "Human Gate Approval Receipt",
+  "description": "A receipt for recording human approval, rejection, revision, or conditional authorization after structural audit of traces, derivatives, attribution, royalty, or value-return claims.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "approval_receipt_id",
+    "title",
+    "created_at",
+    "status",
+    "source_structural_audit",
+    "approval_subject",
+    "reviewer",
+    "decision",
+    "approved_scope",
+    "rejected_scope",
+    "conditions",
+    "risk_acknowledgement",
+    "next_handoff",
+    "audit"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.9.0"
+    },
+    "approval_receipt_id": {
+      "type": "string",
+      "pattern": "^hgar-[A-Za-z0-9._-]+$",
+      "description": "Unique identifier for the human gate approval receipt."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "active", "approved", "rejected", "conditional", "archived"]
+    },
+    "source_structural_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audit_bridge_id",
+        "audit_result",
+        "audit_decision",
+        "source_derivative_id",
+        "source_trace_id",
+        "summary"
+      ],
+      "properties": {
+        "audit_bridge_id": {
+          "type": "string",
+          "pattern": "^sab-[A-Za-z0-9._-]+$"
+        },
+        "audit_result": {
+          "type": "string",
+          "enum": ["pass", "pass_with_notes", "fail", "pending"]
+        },
+        "audit_decision": {
+          "type": "string",
+          "enum": ["approve", "approve_with_notes", "needs_revision", "reject", "pending"]
+        },
+        "source_derivative_id": {
+          "type": "string",
+          "pattern": "^deriv-[A-Za-z0-9._-]+$"
+        },
+        "source_trace_id": {
+          "type": "string",
+          "pattern": "^trace-[A-Za-z0-9._-]+$"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "approval_subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_type",
+        "subject_title",
+        "subject_summary",
+        "requested_approval"
+      ],
+      "properties": {
+        "subject_type": {
+          "type": "string",
+          "enum": [
+            "publication",
+            "derivative_creation",
+            "attribution",
+            "royalty_review",
+            "value_return_preparation",
+            "repository_release",
+            "protocol_extension",
+            "external_handoff"
+          ]
+        },
+        "subject_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requested_approval": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_type",
+        "reviewer_name",
+        "authority_scope"
+      ],
+      "properties": {
+        "reviewer_type": {
+          "type": "string",
+          "enum": ["human_originator", "human_reviewer", "collective_review", "maintainer"]
+        },
+        "reviewer_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_scope": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "publication_approval",
+              "derivative_approval",
+              "attribution_approval",
+              "royalty_review_approval",
+              "repository_release_approval",
+              "protocol_extension_approval",
+              "external_handoff_approval"
+            ]
+          }
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_type",
+        "decision_summary",
+        "decision_reason",
+        "effective_status"
+      ],
+      "properties": {
+        "decision_type": {
+          "type": "string",
+          "enum": [
+            "approve",
+            "approve_with_conditions",
+            "request_revision",
+            "reject",
+            "defer"
+          ]
+        },
+        "decision_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effective_status": {
+          "type": "string",
+          "enum": ["approved", "conditional", "needs_revision", "rejected", "pending"]
+        }
+      }
+    },
+    "approved_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approved_actions",
+        "approved_claims",
+        "approved_outputs"
+      ],
+      "properties": {
+        "approved_actions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "publish",
+              "release_repository",
+              "create_derivative",
+              "grant_attribution",
+              "prepare_royalty_review",
+              "handoff_to_external_system",
+              "extend_protocol",
+              "archive_record"
+            ]
+          }
+        },
+        "approved_claims": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "attribution",
+              "citation",
+              "credit",
+              "manual_royalty_review",
+              "value_return_preparation",
+              "lineage_dependency",
+              "structural_influence"
+            ]
+          }
+        },
+        "approved_outputs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "rejected_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rejected_actions",
+        "rejected_claims",
+        "rejection_notes"
+      ],
+      "properties": {
+        "rejected_actions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "automatic_royalty",
+              "automatic_revenue_share",
+              "exclusive_ownership_claim",
+              "ai_autonomous_authorship_claim",
+              "unreviewed_licensing",
+              "external_publication_without_audit"
+            ]
+          }
+        },
+        "rejected_claims": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "automatic_monetary_entitlement",
+              "exclusive_origin_claim",
+              "unsupported_derivative_claim",
+              "unverified_value_claim",
+              "ai_independent_authorship"
+            ]
+          }
+        },
+        "rejection_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_before_next_handoff",
+        "required_before_publication",
+        "required_before_value_allocation",
+        "blocking_conditions"
+      ],
+      "properties": {
+        "required_before_next_handoff": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required_before_publication": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required_before_value_allocation": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "blocking_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "risk_acknowledgement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "acknowledged_risks",
+        "accepted_risks",
+        "unaccepted_risks",
+        "risk_notes"
+      ],
+      "properties": {
+        "acknowledged_risks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "semantic_drift",
+              "authorship_ambiguity",
+              "symbolic_overextension",
+              "value_claim_overreach",
+              "insufficient_evidence",
+              "external_misinterpretation",
+              "lineage_loss"
+            ]
+          }
+        },
+        "accepted_risks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unaccepted_risks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "risk_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "next_handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "next_handoff_allowed",
+        "next_target",
+        "handoff_conditions",
+        "recommended_next_record"
+      ],
+      "properties": {
+        "next_handoff_allowed": {
+          "type": "boolean"
+        },
+        "next_target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "handoff_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "recommended_next_record": {
+          "type": "string",
+          "enum": [
+            "derivative_output_record",
+            "publication_receipt",
+            "manual_royalty_review",
+            "repository_release_record",
+            "external_handoff_record",
+            "archive_record",
+            "none"
+          ]
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_valid",
+        "human_review_completed",
+        "audit_result",
+        "boundary_notes"
+      ],
+      "properties": {
+        "receipt_valid": {
+          "type": "boolean"
+        },
+        "human_review_completed": {
+          "type": "boolean"
+        },
+        "audit_result": {
+          "type": "string",
+          "enum": ["pass", "pass_with_notes", "fail", "pending"]
+        },
+        "boundary_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
