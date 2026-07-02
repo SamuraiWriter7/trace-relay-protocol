@@ -43,6 +43,11 @@ VALIDATION_TARGETS = [
         "schema": ROOT / "schemas" / "trace-royalty-bridge.schema.json",
         "example": ROOT / "examples" / "trace-royalty-bridge.example.yaml",
     },
+    {
+        "name": "Structural Audit Bridge",
+        "schema": ROOT / "schemas" / "structural-audit-bridge.schema.json",
+        "example": ROOT / "examples" / "structural-audit-bridge.example.yaml",
+    },
 ]
 
 
