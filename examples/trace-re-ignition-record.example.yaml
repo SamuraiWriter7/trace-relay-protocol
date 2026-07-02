@@ -1,0 +1,84 @@
+schema_version: "0.6.0"
+re_ignition_id: "ri-001"
+title: "Re-Ignition of Trace Relay for Royalty OS Bridge"
+created_at: "2026-07-02T00:00:00Z"
+status: "active"
+
+source_trace:
+  trace_id: "trace-004"
+  title: "Trace Relay as Civilization OS Memory Layer"
+  summary: "Trace Relay connects past traces with present questions, allowing thought to become a continuous and auditable lineage."
+  source_handoff_id: "th-001"
+  source_route_id: "mwtr-001"
+  source_rule_id: "ttr-001"
+  source_mutation_log_id: "tdm-001"
+
+trigger_context:
+  trigger_type: "new_question"
+  trigger_summary: "A new question asks how Trace Relay can connect to value return and lineage-based royalty distribution."
+  triggering_input: "How can Trace Relay Protocol connect to Royalty OS and derivative value return?"
+  detected_by: "human_ai_collaboration"
+
+re_ignition_conditions:
+  required_conditions:
+    - "Source trace lineage must remain visible."
+    - "Source mutation log must pass audit or pass with notes."
+    - "Human review must be required before derivative value claims."
+    - "The new context must preserve the distinction between trace reuse and derivative ownership."
+  optional_conditions:
+    - "A royalty bridge route may be prepared if lineage references are complete."
+    - "A structural audit bridge may be attached if derivative claims are expected."
+  blocking_conditions:
+    - "Missing source mutation log."
+    - "Human review requirement removed."
+    - "Royalty claim made without lineage audit."
+    - "Derivative ownership claimed without approval."
+
+activation_plan:
+  activation_mode: "royalty_bridge"
+  re_ignited_question: "How can a preserved and audited trace become the basis for lineage-aware value return?"
+  intended_output: "A future Royalty OS Bridge record connecting trace lineage to derivative value allocation."
+  next_routes:
+    - "royalty_os_bridge"
+    - "structural_audit_bridge"
+    - "origin_derivative_return_loop"
+
+context_compatibility:
+  compatible: true
+  compatibility_notes:
+    - "The source trace already preserves lineage, authorship boundaries, transformation rules, and mutation logs."
+    - "The new context extends the trace from memory lineage into value-return lineage."
+    - "Re-ignition is appropriate because the trace has completed Record -> Handoff -> Route -> Transform -> Diff."
+  mismatch_risks:
+    - "Royalty logic may overreach if trace value is not clearly linked to derivative output."
+    - "Derivative value claims require stricter audit than ordinary dialogue continuation."
+
+boundary_controls:
+  must_preserve:
+    - "source_trace_id"
+    - "source_handoff_id"
+    - "source_route_id"
+    - "source_rule_id"
+    - "source_mutation_log_id"
+    - "human intent and AI reflection distinction"
+    - "trace reuse and derivative ownership distinction"
+  must_not_claim:
+    - "Do not claim royalty eligibility without derivative output evidence."
+    - "Do not treat trace re-ignition as automatic ownership transfer."
+    - "Do not erase source lineage when preparing value-return structures."
+  review_required: true
+
+re_ignition_output:
+  new_trace_id: "trace-006"
+  output_status: "proposed"
+  summary: "The audited Trace Relay memory layer is re-ignited as a candidate bridge toward lineage-aware royalty and value return."
+  handoff_recommendation: "Proceed to Royalty OS Bridge only after human review and structural audit preparation."
+
+audit:
+  audit_required: true
+  human_review_required: true
+  audit_result: "pass_with_notes"
+  boundary_notes:
+    - "Re-ignition activates a trace for new use; it does not transfer authorship."
+    - "Royalty or value-return claims require additional derivative evidence."
+    - "The next route should include structural audit before any allocation logic is defined."
