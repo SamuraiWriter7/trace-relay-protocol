@@ -1,0 +1,514 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/structural-audit-bridge.schema.json",
+  "title": "Structural Audit Bridge",
+  "description": "A bridge record for verifying whether derivative, attribution, royalty, or value-return claims are supported by structural causality, trace lineage, evidence, and human review.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "audit_bridge_id",
+    "title",
+    "created_at",
+    "status",
+    "source_royalty_bridge",
+    "audit_subject",
+    "structural_causality",
+    "evidence_map",
+    "similarity_assessment",
+    "dependency_assessment",
+    "attribution_review",
+    "value_claim_review",
+    "audit_decision",
+    "handoff",
+    "audit"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.8.0"
+    },
+    "audit_bridge_id": {
+      "type": "string",
+      "pattern": "^sab-[A-Za-z0-9._-]+$",
+      "description": "Unique identifier for the structural audit bridge record."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "active", "approved", "rejected", "needs_revision", "archived"]
+    },
+    "source_royalty_bridge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "royalty_bridge_id",
+        "receipt_id",
+        "source_trace_id",
+        "derivative_id",
+        "summary"
+      ],
+      "properties": {
+        "royalty_bridge_id": {
+          "type": "string",
+          "pattern": "^trb-[A-Za-z0-9._-]+$"
+        },
+        "receipt_id": {
+          "type": "string",
+          "pattern": "^rr-[A-Za-z0-9._-]+$"
+        },
+        "source_trace_id": {
+          "type": "string",
+          "pattern": "^trace-[A-Za-z0-9._-]+$"
+        },
+        "derivative_id": {
+          "type": "string",
+          "pattern": "^deriv-[A-Za-z0-9._-]+$"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "audit_subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_type",
+        "subject_title",
+        "claim_being_audited",
+        "claim_type"
+      ],
+      "properties": {
+        "subject_type": {
+          "type": "string",
+          "enum": [
+            "derivative_structure",
+            "attribution_claim",
+            "royalty_claim",
+            "value_return_claim",
+            "lineage_claim",
+            "authorship_claim",
+            "protocol_extension"
+          ]
+        },
+        "subject_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_being_audited": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_type": {
+          "type": "string",
+          "enum": [
+            "structural_dependency",
+            "conceptual_influence",
+            "direct_derivation",
+            "partial_derivation",
+            "attribution_only",
+            "royalty_eligibility",
+            "revenue_share_eligibility"
+          ]
+        }
+      }
+    },
+    "structural_causality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "causality_level",
+        "causal_links",
+        "missing_links",
+        "causality_notes"
+      ],
+      "properties": {
+        "causality_level": {
+          "type": "string",
+          "enum": ["none", "weak", "moderate", "strong", "direct"]
+        },
+        "causal_links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "link_id",
+              "from_ref",
+              "to_ref",
+              "relationship_type",
+              "description",
+              "confidence"
+            ],
+            "properties": {
+              "link_id": {
+                "type": "string",
+                "pattern": "^causal-[A-Za-z0-9._-]+$"
+              },
+              "from_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "to_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "relationship_type": {
+                "type": "string",
+                "enum": [
+                  "origin_to_derivative",
+                  "trace_to_derivative",
+                  "mutation_to_output",
+                  "re_ignition_to_bridge",
+                  "audit_to_claim",
+                  "external_reference"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "confidence": {
+                "type": "string",
+                "enum": ["low", "medium", "high"]
+              }
+            }
+          }
+        },
+        "missing_links": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "causality_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "evidence_map": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_items",
+        "evidence_gaps"
+      ],
+      "properties": {
+        "evidence_items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "evidence_id",
+              "evidence_type",
+              "reference",
+              "supports_claim",
+              "strength"
+            ],
+            "properties": {
+              "evidence_id": {
+                "type": "string",
+                "pattern": "^evidence-[A-Za-z0-9._-]+$"
+              },
+              "evidence_type": {
+                "type": "string",
+                "enum": [
+                  "trace_record",
+                  "handoff_record",
+                  "route_record",
+                  "transformation_rule",
+                  "mutation_log",
+                  "re_ignition_record",
+                  "royalty_bridge_record",
+                  "external_document",
+                  "human_statement",
+                  "repository_commit",
+                  "publication"
+                ]
+              },
+              "reference": {
+                "type": "string",
+                "minLength": 1
+              },
+              "supports_claim": {
+                "type": "boolean"
+              },
+              "strength": {
+                "type": "string",
+                "enum": ["weak", "moderate", "strong", "decisive"]
+              }
+            }
+          }
+        },
+        "evidence_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "similarity_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "similarity_level",
+        "similarity_basis",
+        "independent_convergence_possible",
+        "notes"
+      ],
+      "properties": {
+        "similarity_level": {
+          "type": "string",
+          "enum": ["none", "low", "medium", "high", "near_identical"]
+        },
+        "similarity_basis": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "terminology",
+              "schema_structure",
+              "workflow",
+              "conceptual_framing",
+              "output_format",
+              "lineage_pattern",
+              "symbolic_language"
+            ]
+          }
+        },
+        "independent_convergence_possible": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "dependency_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dependency_level",
+        "dependent_elements",
+        "independent_elements",
+        "dependency_notes"
+      ],
+      "properties": {
+        "dependency_level": {
+          "type": "string",
+          "enum": ["none", "weak", "moderate", "strong", "direct"]
+        },
+        "dependent_elements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "independent_elements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "dependency_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "attribution_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attribution_required",
+        "recommended_attribution",
+        "attribution_risk",
+        "review_notes"
+      ],
+      "properties": {
+        "attribution_required": {
+          "type": "boolean"
+        },
+        "recommended_attribution": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attribution_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "review_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "value_claim_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value_claim_allowed",
+        "allowed_claim_types",
+        "blocked_claim_types",
+        "review_notes"
+      ],
+      "properties": {
+        "value_claim_allowed": {
+          "type": "boolean"
+        },
+        "allowed_claim_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "attribution",
+              "credit",
+              "citation",
+              "manual_royalty_review",
+              "revenue_share_review",
+              "compute_credit_review"
+            ]
+          }
+        },
+        "blocked_claim_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "automatic_royalty",
+              "automatic_revenue_share",
+              "exclusive_ownership",
+              "unreviewed_licensing_claim",
+              "ai_autonomous_authorship_claim"
+            ]
+          }
+        },
+        "review_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "audit_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "decision_summary",
+        "required_revisions",
+        "approved_next_routes"
+      ],
+      "properties": {
+        "decision": {
+          "type": "string",
+          "enum": ["approve", "approve_with_notes", "needs_revision", "reject", "pending"]
+        },
+        "decision_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_revisions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "approved_next_routes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "next_handoff_recommended",
+        "handoff_target",
+        "handoff_conditions"
+      ],
+      "properties": {
+        "next_handoff_recommended": {
+          "type": "boolean"
+        },
+        "handoff_target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "handoff_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audit_required",
+        "human_review_required",
+        "audit_result",
+        "boundary_notes"
+      ],
+      "properties": {
+        "audit_required": {
+          "type": "boolean"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "audit_result": {
+          "type": "string",
+          "enum": ["pass", "pass_with_notes", "fail", "pending"]
+        },
+        "boundary_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
