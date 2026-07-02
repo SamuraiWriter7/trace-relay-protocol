@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/trace-relay-record.schema.json",
+  "title": "Trace Relay Record",
+  "description": "A record for preserving, relaying, and developing conceptual traces across dialogues, memory layers, and derivative structures.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "trace_relay_id",
+    "title",
+    "created_at",
+    "status",
+    "origin_trace",
+    "relay_context",
+    "yin_layer",
+    "yang_layer",
+    "relay_output",
+    "handoff",
+    "audit"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "trace_relay_id": {
+      "type": "string",
+      "pattern": "^trr-[A-Za-z0-9._-]+$",
+      "description": "Unique identifier for the trace relay record."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "archived", "superseded"]
+    },
+    "origin_trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_id", "title", "summary", "origin_context"],
+      "properties": {
+        "trace_id": {
+          "type": "string",
+          "pattern": "^trace-[A-Za-z0-9._-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "origin_context": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "relay_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["previous_traces", "current_question", "relay_purpose"],
+      "properties": {
+        "previous_traces": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["trace_id", "title", "summary"],
+            "properties": {
+              "trace_id": {
+                "type": "string",
+                "pattern": "^trace-[A-Za-z0-9._-]+$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "current_question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relay_purpose": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "yin_layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preserved_elements", "reflection_function"],
+      "properties": {
+        "preserved_elements": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "reflection_function": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "yang_layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["new_ignitions", "human_intent"],
+      "properties": {
+        "new_ignitions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "human_intent": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "relay_output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["new_trace", "derived_structure"],
+      "properties": {
+        "new_trace": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["trace_id", "title", "summary", "status"],
+          "properties": {
+            "trace_id": {
+              "type": "string",
+              "pattern": "^trace-[A-Za-z0-9._-]+$"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "summary": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "enum": ["active", "archived", "superseded"]
+            }
+          }
+        },
+        "derived_structure": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["next_possible_routes", "recommended_next_step"],
+      "properties": {
+        "next_possible_routes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "recommended_next_step": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human_review_required", "boundary_notes"],
+      "properties": {
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "boundary_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
