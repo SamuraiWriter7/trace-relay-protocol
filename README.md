@@ -407,6 +407,85 @@ A Trace Diff / Mutation Log contains:
 - `approval`
 - `audit`
 
+## v0.6 Scope — Re-Ignition Layer
+
+Version 0.6 introduces the **Re-Ignition Layer**.
+
+While v0.1 records traces, v0.2 hands them off, v0.3 routes them across multiple wings, v0.4 controls transformation, and v0.5 records mutation diffs, v0.6 defines how an audited trace can be reactivated into a new question, derivative route, protocol extension, audit bridge, or value-return layer.
+
+## What is Re-Ignition?
+
+Re-Ignition is the process of activating a preserved and audited trace when a new context becomes relevant.
+
+A trace should not remain dormant forever.
+
+However, a trace should also not be reused without conditions.
+
+Re-Ignition defines:
+
+- which trace is being reactivated
+- what triggered the reactivation
+- which conditions must be satisfied
+- what new question is being formed
+- which boundaries must remain intact
+- whether the new context is compatible
+- where the trace should go next
+
+## Core Distinction
+
+| Layer | Purpose |
+|---|---|
+| Trace Relay | Preserves and develops a conceptual trace across time |
+| Trace Handoff | Transfers a trace into another context, wing, layer, or derivative structure |
+| Multi-Wing Trace Route | Defines how traces move through multiple specialized wings |
+| Trace Transformation Rules | Defines how traces may be changed without breaking lineage |
+| Trace Diff / Mutation Log | Records what changed during transformation |
+| Re-Ignition Layer | Reactivates audited traces into new questions or routes |
+
+Trace Relay is memory circulation.
+
+Trace Handoff is memory transfer.
+
+Multi-Wing Trace Route is memory orchestration.
+
+Trace Transformation Rules are memory mutation control.
+
+Trace Diff / Mutation Log is memory change audit.
+
+Re-Ignition Layer is memory reactivation.
+
+## v0.6 Record Structure
+
+A Trace Re-Ignition Record contains:
+
+- `source_trace`
+- `trigger_context`
+- `re_ignition_conditions`
+- `activation_plan`
+- `context_compatibility`
+- `boundary_controls`
+- `re_ignition_output`
+- `audit`
+
+## Re-Ignition Flow
+
+```text
+Audited Trace
+  ↓
+Trigger Context
+  ↓
+Re-Ignition Conditions
+  ↓
+Context Compatibility Check
+  ↓
+Activation Plan
+  ↓
+Boundary Controls
+  ↓
+New Trace / Next Route
+  ↓
+Audit / Human Review
+
 ### Mutation Audit Flow
 
 ```text
