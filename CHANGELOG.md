@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0-candidate] - 2026-07-02
+
+### Added
+
+- Added `Multi-Wing Trace Route` schema.
+- Added example YAML record for multi-wing trace routing.
+- Updated validation script to validate Trace Relay, Trace Handoff, and Multi-Wing Trace Route records.
+
+### Defined
+
+- Multi-Wing Trace Route as the orchestration layer for passing conceptual traces across specialized AI wings.
+- `source_handoff` as the originating handoff record.
+- `wings` as specialized processing units with allowed operations, prohibited operations, and output contracts.
+- `route_sequence` as the ordered trace movement across wings.
+- `continuity_rules` as lineage and integrity preservation rules.
+- `blocking_conditions` as conditions that stop routing.
+- `human_gate` as the final human review layer.
+- `audit` as the boundary and lineage verification layer.
+
+### Core Distinction
+
+```text
+Trace Relay = memory circulation
+Trace Handoff = memory transfer
+Multi-Wing Trace Route = memory orchestration
+
 ## [0.2.0-candidate] - 2026-07-02
 
 ### Added
