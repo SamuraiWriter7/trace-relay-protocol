@@ -1,0 +1,125 @@
+schema_version: "0.5.0"
+mutation_log_id: "tdm-001"
+title: "Mutation Log for Yin-Yang Consciousness Trace Reframing"
+created_at: "2026-07-02T00:00:00Z"
+status: "active"
+
+source_trace:
+  trace_id: "trace-004"
+  title: "Trace Relay as Civilization OS Memory Layer"
+  summary: "Trace Relay connects past traces with present questions, allowing thought to become a continuous and auditable lineage."
+  source_handoff_id: "th-001"
+  source_route_id: "mwtr-001"
+
+source_rule:
+  rule_id: "ttr-001"
+  rule_title: "Transformation Rules for Yin-Yang Consciousness Trace"
+  max_transformation_level: "moderate"
+
+mutation_context:
+  mutation_type: "symbolic_reframing"
+  performed_by: "human_ai_collaboration"
+  purpose: "To reframe the trace as an auditable memory mutation record while preserving origin, authorship boundaries, and symbolic safety."
+  target_output: "Trace Diff / Mutation Log record for v0.5"
+
+before_state:
+  core_claims:
+    - "Trace Relay functions as a memory circulation layer."
+    - "Human ignition and AI reflection must remain distinct."
+    - "Dialogue-generated traces can become a continuous lineage of thought."
+  preserved_terms:
+    - "Trace Relay"
+    - "human ignition"
+    - "AI reflection"
+    - "memory circulation"
+    - "Origin -> Trace -> Relay -> Derivative -> Audit -> Return"
+  boundary_notes:
+    - "Do not treat AI memory as equivalent to human consciousness."
+    - "Do not erase source trace lineage."
+    - "Do not convert symbolic language into unsupported factual claims."
+
+after_state:
+  core_claims:
+    - "Trace Relay records can be transformed while preserving lineage and authorship boundaries."
+    - "Trace Diff / Mutation Log records what changed during transformation."
+    - "Mutation control allows traces to evolve without origin erasure."
+  preserved_terms:
+    - "Trace Relay"
+    - "human ignition"
+    - "AI reflection"
+    - "memory circulation"
+    - "Origin -> Trace -> Relay -> Derivative -> Audit -> Return"
+  new_terms:
+    - "Trace Diff"
+    - "Mutation Log"
+    - "semantic drift"
+    - "risk delta"
+    - "preservation check"
+  boundary_notes:
+    - "AI-assisted transformation must remain auditable."
+    - "Human review is required before further derivative use."
+    - "Symbolic reframing must remain distinguishable from technical claims."
+
+diff_summary:
+  preserved:
+    - "Core lineage from source trace to route and rule."
+    - "Distinction between human ignition and AI reflection."
+    - "Requirement for human review."
+  added:
+    - "Diff summary layer."
+    - "Mutation event log."
+    - "Risk delta tracking."
+    - "Approval status for next handoff."
+  removed:
+    - "None."
+  modified:
+    - "Trace transformation is now represented as an auditable mutation process."
+    - "Symbolic reframing is tied to explicit preservation checks."
+  semantic_drift_level: "low"
+
+mutation_events:
+  - event_id: "event-001"
+    operation: "add_diff_summary"
+    description: "Added a structured summary of preserved, added, removed, and modified elements."
+    impact_level: "minor"
+    rule_compliance: "compliant"
+  - event_id: "event-002"
+    operation: "add_risk_delta"
+    description: "Added risk change tracking for semantic drift, authorship risk, and mythic overextension."
+    impact_level: "moderate"
+    rule_compliance: "compliant"
+  - event_id: "event-003"
+    operation: "add_approval_status"
+    description: "Added human review and approval status before next handoff."
+    impact_level: "minor"
+    rule_compliance: "compliant"
+
+preservation_check:
+  lineage_preserved: true
+  authorship_boundary_preserved: true
+  symbolic_factual_distinction_preserved: true
+  human_review_requirement_preserved: true
+  missing_elements: []
+
+risk_delta:
+  semantic_drift_change: "unchanged"
+  authorship_risk_change: "decreased"
+  mythic_overextension_change: "decreased"
+  overall_risk_after_mutation: "low"
+  risk_notes:
+    - "Diff logging reduces authorship ambiguity."
+    - "Explicit preservation checks reduce origin erasure risk."
+    - "Symbolic claims remain bounded by audit notes."
+
+approval:
+  human_review_required: true
+  human_review_status: "pending"
+  approved_for_next_handoff: false
+
+audit:
+  audit_required: true
+  audit_result: "pass_with_notes"
+  boundary_notes:
+    - "Mutation log is valid as a record of transformation, not as a transfer of authorship."
+    - "Next handoff should remain blocked until human review is approved."
+    - "Trace evolution is permitted only while lineage remains visible."
