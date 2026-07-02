@@ -2,6 +2,53 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0-candidate] - 2026-07-02
+
+### Added
+
+- Added `Trace Re-Ignition Record` schema.
+- Added example YAML record for trace reactivation.
+- Updated validation script to validate:
+  - Trace Relay Record
+  - Trace Handoff Record
+  - Multi-Wing Trace Route
+  - Trace Transformation Rule
+  - Trace Diff Mutation Log
+  - Trace Re-Ignition Record
+
+### Defined
+
+- Re-Ignition Layer as the memory reactivation layer of the protocol.
+- `source_trace` as the audited trace being reactivated.
+- `trigger_context` as the condition, input, or event that caused reactivation.
+- `re_ignition_conditions` as the required, optional, and blocking conditions for reuse.
+- `activation_plan` as the new question, intended output, and next routes.
+- `context_compatibility` as the check between prior trace meaning and current use.
+- `boundary_controls` as the preservation and non-claim requirements.
+- `re_ignition_output` as the newly proposed trace and handoff recommendation.
+- `audit` as the final review and boundary layer.
+
+### Core Distinction
+
+```text
+Trace Relay = memory circulation
+Trace Handoff = memory transfer
+Multi-Wing Trace Route = memory orchestration
+Trace Transformation Rules = memory mutation control
+Trace Diff / Mutation Log = memory change audit
+Re-Ignition Layer = memory reactivation
+Notes
+
+This release begins the second arc of the Trace Relay Protocol.
+
+v0.1–v0.5 established:
+
+Record -> Handoff -> Route -> Transform -> Diff
+
+v0.6 adds the ability to reactivate an audited trace into a new question, protocol extension, derivative route, audit bridge, or value-return layer.
+
+This prevents traces from becoming dormant archives while also preventing contextless reuse.
+
 ## [0.5.0-candidate] - 2026-07-02
 
 ### Added
