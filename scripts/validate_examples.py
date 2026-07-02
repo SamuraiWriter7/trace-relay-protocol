@@ -53,6 +53,11 @@ VALIDATION_TARGETS = [
         "schema": ROOT / "schemas" / "human-gate-approval-receipt.schema.json",
         "example": ROOT / "examples" / "human-gate-approval-receipt.example.yaml",
     },
+    {
+        "name": "Unified Trace Relay Lifecycle",
+        "schema": ROOT / "schemas" / "unified-trace-relay-lifecycle.schema.json",
+        "example": ROOT / "examples" / "unified-trace-relay-lifecycle.example.yaml",
+    },
 ]
 
 
