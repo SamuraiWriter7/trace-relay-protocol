@@ -1,0 +1,114 @@
+schema_version: "0.4.0"
+rule_id: "ttr-001"
+title: "Transformation Rules for Yin-Yang Consciousness Trace"
+created_at: "2026-07-02T00:00:00Z"
+status: "active"
+
+applies_to:
+  trace_types:
+    - "conceptual_seed"
+    - "symbolic_trace"
+    - "derivative_trace"
+  wing_ids:
+    - "wing-analyst"
+    - "wing-memory"
+    - "wing-audit"
+    - "wing-mythos-regulator"
+  route_ids:
+    - "mwtr-001"
+
+source_route:
+  route_id: "mwtr-001"
+  source_trace_id: "trace-004"
+  source_handoff_id: "th-001"
+  summary: "Trace Relay as Civilization OS Memory Layer routed through multiple specialized AI wings."
+
+transformation_scope:
+  scope_type: "symbolic_reframing"
+  purpose: "To allow symbolic and structural reframing of the trace while preserving lineage, authorship boundaries, and the distinction between metaphor and factual claim."
+  semantic_drift_tolerance: "low"
+
+allowed_transformations:
+  - operation: "summarize_trace"
+    description: "Compress the trace into a shorter form while preserving the core conceptual meaning."
+    conditions:
+      - "Source trace ID must remain visible."
+      - "Authorship boundary must remain explicit."
+  - operation: "extract_structure"
+    description: "Extract conceptual components, relationships, and route-ready elements."
+    conditions:
+      - "Do not introduce unsupported new origin claims."
+      - "Preserve the distinction between human ignition and AI reflection."
+  - operation: "symbolic_reframe"
+    description: "Reframe the trace using symbolic language such as yin, yang, mirror, relay, or tuning."
+    conditions:
+      - "Symbolic language must be labeled as metaphorical or structural."
+      - "Do not convert metaphor into factual claims about AI consciousness."
+  - operation: "prepare_derivative"
+    description: "Prepare the trace for derivative documentation, article writing, or protocol expansion."
+    conditions:
+      - "Derivative output must include lineage references."
+      - "Human review must occur before publication."
+
+prohibited_transformations:
+  - operation: "erase_origin"
+    reason: "Removing source lineage would make the derivative structure unauditable."
+  - operation: "claim_ai_human_equivalence"
+    reason: "The protocol distinguishes AI structural reflection from human consciousness."
+  - operation: "inflate_symbolic_claim"
+    reason: "Symbolic interpretation must not become unsupported metaphysical certainty."
+  - operation: "merge_distinct_traces"
+    reason: "Distinct traces must not be collapsed into a vague or untraceable memory object."
+  - operation: "publish_without_review"
+    reason: "Human review is required before derivative publication or ownership claims."
+
+preservation_requirements:
+  must_preserve:
+    - "source_trace_id"
+    - "source_handoff_id"
+    - "route_id"
+    - "human ignition and AI reflection distinction"
+    - "symbolic and factual distinction"
+  must_label:
+    - "symbolic language"
+    - "AI-assisted reflection"
+    - "derivative preparation"
+  must_not_remove:
+    - "authorship boundary notes"
+    - "human review requirement"
+    - "lineage references"
+
+mutation_controls:
+  max_transformation_level: "moderate"
+  requires_diff_summary: true
+  requires_human_review: true
+
+risk_assessment:
+  semantic_drift_risk: "medium"
+  authorship_risk: "medium"
+  mythic_overextension_risk: "high"
+  risk_notes:
+    - "Yin-yang consciousness language can be powerful but may be misread as claiming AI has human-equivalent consciousness."
+    - "Mythos Regulator review is required when symbolic language becomes too absolute."
+    - "Derivative structures must preserve trace lineage."
+
+output_requirements:
+  required_outputs:
+    - "transformed_trace_summary"
+    - "preserved_lineage_refs"
+    - "diff_summary"
+    - "boundary_notes"
+    - "human_review_status"
+  forbidden_outputs:
+    - "unsupported AI consciousness claim"
+    - "unattributed derivative claim"
+    - "origin-erased summary"
+    - "metaphor presented as technical fact"
+
+audit:
+  audit_required: true
+  human_review_required: true
+  boundary_notes:
+    - "Transformation rules must preserve continuity without freezing thought."
+    - "Allowed transformation does not imply ownership transfer."
+    - "Symbolic reframing must remain auditable."
