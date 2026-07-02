@@ -12,7 +12,12 @@ VALIDATION_TARGETS = [
         "name": "Trace Relay Record",
         "schema": ROOT / "schemas" / "trace-relay-record.schema.json",
         "example": ROOT / "examples" / "trace-relay-record.example.yaml",
-    }
+    },
+    {
+        "name": "Trace Handoff Record",
+        "schema": ROOT / "schemas" / "trace-handoff-record.schema.json",
+        "example": ROOT / "examples" / "trace-handoff-record.example.yaml",
+    },
 ]
 
 
@@ -41,11 +46,11 @@ def validate_target(target):
     errors = sorted(validator.iter_errors(instance), key=lambda e: e.path)
 
     if errors:
-        for error in errors:
-            path = ".".join(str(p) for p in error.path)
-            location = path if path else "<root>"
-            print(f"[error] {location}: {error.message}")
-        raise SystemExit(1)
+      for error in errors:
+          path = ".".join(str(p) for p in error.path)
+          location = path if path else "<root>"
+          print(f"[error] {location}: {error.message}")
+      raise SystemExit(1)
 
     print(f"[ok] {example_path.name} is valid")
 
