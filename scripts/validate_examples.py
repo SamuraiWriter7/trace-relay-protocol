@@ -23,6 +23,11 @@ VALIDATION_TARGETS = [
         "schema": ROOT / "schemas" / "multi-wing-trace-route.schema.json",
         "example": ROOT / "examples" / "multi-wing-trace-route.example.yaml",
     },
+    {
+        "name": "Trace Transformation Rule",
+        "schema": ROOT / "schemas" / "trace-transformation-rule.schema.json",
+        "example": ROOT / "examples" / "trace-transformation-rule.example.yaml",
+    },
 ]
 
 
